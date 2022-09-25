@@ -1,0 +1,18 @@
+<https://dbpedia.org/page/Saskia_Esken> <stc://base-0-4/is part of> <https://www.wikidata.org/wiki/Q49768> _:rel1 .
+_:rel1 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://dbpedia.org/page/Saskia_Esken> <stc://base-0-4/does> <https://www.wikidata.org/wiki/Q56119332> _:rel2 .
+_:rel2 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://ifkw.lmu.de/xml-dev-0-1/militärischer Sieg> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q15860072> _:rel3 .
+_:rel3 <http://purl.org/dc/terms/title> "Militärischer Sieg im Russland-Ukraine-Konflikt"  .
+<https://dbpedia.org/page/Vladimir_Putin> <https://ifkw.lmu.de/xml-dev-0-1/darf nicht> _:rel3  .
+<https://dbpedia.org/page/Vladimir_Putin> <stc://base-0-4/does> <https://ifkw.lmu.de/xml-dev-0-1/imperialistisches Großmachtstreben> _:rel5 .
+_:rel5 <http://purl.org/dc/terms/title> "Putins imperialistisches Großmachtstreben"  .
+_:rel5 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:figurative>  .
+_:rel5 <https://ifkw.lmu.de/xml-dev-0-1/darf nicht> <https://www.wikidata.org/wiki/Q778301>  .
+<https://ifkw.lmu.de/xml-dev-0-1/das Recht des Stärkeren> <https://ifkw.lmu.de/xml-dev-0-1/darf nicht> <https://ifkw.lmu.de/xml-dev-0-1/Sieg über die Stärke des Rechts> _:rel7 .
+_:rel7 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:figurative>  .
+<https://dbpedia.org/page/Germany> <stc://base-0-4/tries> <https://ifkw.lmu.de/xml-dev-0-1/Verhinderung der Ausbreitung eines Flächenbrands> _:rel8 .
+_:rel8 <http://purl.org/dc/terms/title> "Deutsche Verhinderungsversuche der Ausbreitung eines Flächenbrands"  .
+_:rel8 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:figurative>  .
+_:rel8 <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q15860072> _:rel9 .
+_:rel9 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .

@@ -1,0 +1,32 @@
+<https://ifkw.lmu.de/xml-dev-0-1/#Putin> <stc://base-0-4/assign context> <https://dbpedia.org/page/Vladimir_Putin> _:rel1 .
+_:rel1 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+_:rel8 <stc://base-0-4/and> _:rel9 _:rel10 .
+_:rel10 <http://purl.org/dc/terms/title> "Würde die Ukraine keine militärische Intervention durchführen und würde die Bundesrepublik Deutschland die Ukraine nicht unterstützen"  .
+_:rel10 <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q1037363>  .
+<https://www.wikidata.org/wiki/Q1037363> <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q102186689> _:rel12 .
+_:rel12 <http://purl.org/dc/terms/title> "unterlassene Hilfeleistung wird als Schwäche asugelegt"  .
+<https://www.wikidata.org/wiki/Q1037363> <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/Zögerlichkeit> _:rel13 .
+_:rel13 <http://purl.org/dc/terms/title> "unterlassene Hilfeleistung wird als Zögerlichkeit ausgelegt"  .
+_:rel12 <stc://base-0-4/and> _:rel13 _:rel14 .
+_:rel14 <http://purl.org/dc/terms/title> "unterlassene Hilfeleistung wird als Schwäche und Zögerlichkeit ausgelegt"  .
+_:rel10 <stc://base-0-4/assign context> _:rel14 _:rel15 .
+_:rel15 <http://purl.org/dc/terms/title> "Würde die Ukraine keine militärische Intervention durchführen und würde die Bundesrepublik Deutschland die Ukraine nicht unterstützen, würde diese unterlassene Hilfeleistung als Schwäche und Zögerlichkeit ausgelegt"  .
+<https://www.wikidata.org/wiki/Q159> <https://www.openthesaurus.de/synonyme/bedrohen> <https://ifkw.lmu.de/xml-dev-0-1/weitere Länder> _:rel16 .
+_:rel16 <http://purl.org/dc/terms/title> "Russische Regierung bedroht weitere Länder"  .
+_:rel15 <stc://base-0-4/is condition for> _:rel16  .
+_:rel16 <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q30230067>  .
+<https://ifkw.lmu.de/xml-dev-0-1/#Putin> <stc://base-0-4/is a> <https://www.wikidata.org/wiki/Q4692287> _:rel2 .
+_:rel2 <http://purl.org/dc/terms/title> "Aggressor wie Putin"  .
+_:rel2 <stc://media-0-4/enforce> <https://www.wikidata.org/wiki/Q5919191> _:rel3 .
+_:rel3 <http://purl.org/dc/terms/title> "Aggressor wie Putin erzwingt militärische Intervention"  .
+<https://dbpedia.org/page/Christian_Democratic_Union_of_Germany> <stc://base-0-4/expresses opinion> _:rel3  .
+<https://dbpedia.org/page/Ukraine> <https://www.openthesaurus.de/synonyme/nicht%20tun> <https://www.wikidata.org/wiki/Q5919191> _:rel5 .
+_:rel5 <http://purl.org/dc/terms/title> "Ukraine macht keine militärischen Handlungen"  .
+<https://ifkw.lmu.de/xml-dev-0-1/Unterstützung> <stc://base-0-4/assign context> <https://dbpedia.org/page/Ukraine> _:rel6 .
+_:rel6 <http://purl.org/dc/terms/title> "Unterstützung der Ukraine"  .
+<https://dbpedia.org/page/Germany> <https://www.openthesaurus.de/synonyme/nicht%20tun> _:rel6 _:rel7 .
+_:rel7 <http://purl.org/dc/terms/title> "Unterstützung der Ukraine durch die Bundesrepublik Deutschland"  .
+_:rel5 <stc://base-0-4/locate in time> <https://www.wikidata.org/wiki/Q30230067> _:rel8 .
+_:rel8 <http://purl.org/dc/terms/title> "WÜRDE Ukraine keine militärische Intervention machen"  .
+_:rel7 <stc://base-0-4/locate in time> <https://www.wikidata.org/wiki/Q30230067> _:rel9 .
+_:rel9 <http://purl.org/dc/terms/title> "WÜRDE Bundesrepublik Deutschland die Ukraine nicht unterstützen"  .

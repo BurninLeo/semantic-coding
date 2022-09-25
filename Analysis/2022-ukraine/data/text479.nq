@@ -1,0 +1,17 @@
+<https://www.wikidata.org/wiki/Q1898733> <stc://base-0-4/is part of> <https://dbpedia.org/page/Christian_Democratic_Union_of_Germany> _:rel1 .
+_:rel1 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://ifkw.lmu.de/xml-dev-0-1/#Waffenlieferungen> <stc://base-0-4/is condition for> _:rel8  .
+<https://ifkw.lmu.de/xml-dev-0-1/#Waffenlieferungen> <stc://base-0-4/is condition for> <https://www.wikidata.org/wiki/Q1889>  .
+<https://ifkw.lmu.de/xml-dev-0-1/#Waffenlieferungen> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q15860072>  .
+<https://www.wikidata.org/wiki/Q1898733> <stc://base-0-4/does> <https://www.wikidata.org/wiki/Q56119332> _:rel2 .
+_:rel2 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://ifkw.lmu.de/xml-dev-0-1/Unterstützung> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q212> _:rel3 .
+_:rel3 <http://purl.org/dc/terms/title> "Unterstützung der Ukraine"  .
+<https://dbpedia.org/page/Bundestag> <https://www.openthesaurus.de/synonyme/beantragen> _:rel3 _:rel4 .
+_:rel4 <http://purl.org/dc/terms/title> "Antrag des Deutschen Bundestags zur Unterstützung der Ukraine"  .
+_:rel4 <stc://base-0-4/is> <stc://media-0-4/ActivityPolitical>  .
+_:rel4 <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/wichtig>  .
+<https://dbpedia.org/page/Friedrich_Merz> <https://ifkw.lmu.de/xml-dev-0-1/ist Ursache für> _:rel4  .
+<https://ifkw.lmu.de/xml-dev-0-1/Kriegsende> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q15860072> _:rel8 .
+_:rel8 <http://purl.org/dc/terms/title> "Ende des Krieges in der Ukraine "  .
+<https://www.wikidata.org/wiki/Q15860072> <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q134313>  .

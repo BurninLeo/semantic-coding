@@ -1,0 +1,27 @@
+<https://dbpedia.org/page/Friedrich_Merz> <stc://base-0-4/is part of> <https://dbpedia.org/page/Christian_Democratic_Union_of_Germany> _:rel1 .
+_:rel1 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+_:rel9 <stc://base-0-4/locate in time> <stc://base-0-4/PastContext>  .
+_:rel4 <stc://base-0-4/assign context> <https://ifkw.lmu.de/xml-dev-0-1/mehr/häufiger/stärker> _:rel11 .
+_:rel11 <http://purl.org/dc/terms/title> "Stärkere Verteidigung der Freiheit"  .
+<https://dbpedia.org/page/Germany> <https://www.openthesaurus.de/synonyme/etwas+tun+müssen> _:rel11 _:rel12 .
+_:rel12 <http://purl.org/dc/terms/title> "Deutschland muss mehr für die Verteidigung der Freiheit tun"  .
+_:rel12 <stc://base-0-4/locate in time> <https://www.wikidata.org/wiki/Q110999040>  .
+<https://dbpedia.org/page/Friedrich_Merz> <stc://base-0-4/wants> _:rel12 _:rel14 .
+_:rel14 <http://purl.org/dc/terms/title> "Zeigen von Friedrich Merz, dass Deutschland mehr für seine Freiheit tun muss"  .
+<https://dbpedia.org/page/Friedrich_Merz> <https://www.openthesaurus.de/synonyme/reisen> <https://ifkw.lmu.de/xml-dev-0-1/#Kiew> _:rel15 .
+_:rel15 <http://purl.org/dc/terms/title> "Friedrich Merz reist nach Kiew"  .
+_:rel15 <stc://base-0-4/locate in time> <stc://base-0-4/PastContext>  .
+_:rel14 <https://ifkw.lmu.de/xml-dev-0-1/ist Ursache für> _:rel15  .
+<https://dbpedia.org/page/Friedrich_Merz> <stc://base-0-4/does> <https://www.wikidata.org/wiki/Q56119332> _:rel2 .
+_:rel2 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://dbpedia.org/page/Germany> <https://www.openthesaurus.de/synonyme/unterstützen> <https://www.wikidata.org/wiki/Q212>  .
+<https://www.wikidata.org/wiki/Q1985622> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q243968> _:rel4 .
+_:rel4 <http://purl.org/dc/terms/title> "Verteidigung der Freiheit"  .
+_:rel4 <stc://base-0-4/assign context> <https://dbpedia.org/page/Germany> _:rel5 .
+_:rel5 <http://purl.org/dc/terms/title> "Verteidigung der deutschen Freiheit"  .
+<https://www.wikidata.org/wiki/Q44806> <stc://base-0-4/does> _:rel5  .
+<https://www.wikidata.org/wiki/Q44806> <stc://base-0-4/does> _:rel4  .
+<https://www.wikidata.org/wiki/Q1136816> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q243968> _:rel8 .
+_:rel8 <http://purl.org/dc/terms/title> "Gewöhnen an die Freiheit"  .
+<https://dbpedia.org/page/Germany> <stc://base-0-4/does> _:rel8 _:rel9 .
+_:rel9 <http://purl.org/dc/terms/title> "Deutschland gewöhnt sich an die Freiheit"  .

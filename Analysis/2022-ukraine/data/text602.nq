@@ -1,0 +1,23 @@
+<https://dbpedia.org/page/Olaf_Scholz> <https://ifkw.lmu.de/xml-dev-0-1/ist/sind nicht> <https://ifkw.lmu.de/xml-dev-0-1/ängstlich> _:rel1 .
+_:rel1 <http://purl.org/dc/terms/title> "Olaf Scholz ist nicht ängstlich"  .
+<https://ifkw.lmu.de/xml-dev-0-1/Unterstützung> <stc://base-0-4/assign context> <https://dbpedia.org/page/Ukraine> _:rel10 .
+_:rel10 <http://purl.org/dc/terms/title> "Unterstützung der Ukraine"  .
+_:rel10 <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q56210320> _:rel11 .
+_:rel11 <http://purl.org/dc/terms/title> "Unterstützung der Ukraine ist eine moralitsche Pflicht"  .
+<https://dbpedia.org/page/Olaf_Scholz> <https://www.openthesaurus.de/synonyme/für%20richtig%20halten> _:rel10  .
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/is a> <https://dbpedia.org/page/Chancellor_of_Germany>  .
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/expresses opinion> <https://www.wikidata.org/wiki/Q669057>  .
+_:rel1 <stc://base-0-4/assign context> <https://ifkw.lmu.de/xml-dev-0-1/nicht genug (sein)> _:rel2 .
+_:rel2 <http://purl.org/dc/terms/title> "Olaf Scholz ist nicht ängstlich genug"  .
+<https://www.wikidata.org/wiki/Q16513426> <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q29485> _:rel3 .
+_:rel3 <http://purl.org/dc/terms/title> "eine falsche Entscheidung"  .
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/expresses opinion> _:rel3 _:rel4 .
+_:rel4 <http://purl.org/dc/terms/title> "Olaf Scholz hält eine Entscheidung für falsch"  .
+<https://dbpedia.org/page/Olaf_Scholz> <https://www.openthesaurus.de/synonyme/nicht%20tun> _:rel3 _:rel5 .
+_:rel5 <http://purl.org/dc/terms/title> "Olaf Scholz trifft keine falsche Entscheidung"  .
+_:rel4 <https://ifkw.lmu.de/xml-dev-0-1/ist Ursache für> _:rel5  .
+<https://www.wikidata.org/wiki/Q7390> <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/laut (sein)> _:rel7 .
+_:rel7 <http://purl.org/dc/terms/title> "laute Rufe/Stimmen"  .
+_:rel7 <https://ifkw.lmu.de/xml-dev-0-1/ist keine Ursache für> _:rel3  .
+<https://dbpedia.org/page/Olaf_Scholz> <https://www.openthesaurus.de/synonyme/für%20richtig%20halten> <https://ifkw.lmu.de/xml-dev-0-1/Lieferung von Waffen an die Ukraine> _:rel9 .
+_:rel9 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .

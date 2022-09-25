@@ -1,0 +1,202 @@
+---
+title: "Export ins das Format für igraph"
+author: "Dominik Leiner"
+date: "06.09.2022"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+for (tmpPackage in c("pander","knitr","tidyverse", "igraph")) {
+  if (!require(tmpPackage, character.only = T)) {
+    install.packages(tmpPackage, dependencies = T)
+    library(tmpPackage, character.only = T)
+  }
+}
+
+rm(list=ls())
+source("semantic-classes.R")
+load("M1.RData")
+```
+
+Das igraph-Paket (https://igraph.org/r/html/latest/) erlaubt Netzwerkanalysen. Es liegt deshalb nahe, unser internes Format dorthin zu exportieren. Allerdings gehen dabei (a) die unterschiedlichen Hierarchieebenen verloren und (b) die unterschiedlichen Kanten/Operatoren werden nicht differenziert.
+
+Das können wir dann an igraph übergeben. Allerdings kommen da schon ein paar Knoten zusammen.
+
+```{r}
+sem.complete =
+    methods[["text380"]] + methods[["text423"]] + methods[["text439"]] + methods[["text449"]] + methods[["text454"]] +
+    methods[["text465"]] + methods[["text479"]] + methods[["text487"]] + methods[["text505"]] + methods[["text532"]] +
+    methods[["text585"]] + methods[["text592"]] + methods[["text602"]] + methods[["text626"]] + methods[["text647"]] +
+    methods[["text554"]] + methods[["text566"]] + methods[["text613"]] + methods[["text635"]]
+
+# Das Hintergrundwissen ist für alle Netzwerke gültig
+# Aber an der Extraktion hapert es im Moment noch 
+# background = complete$slice(c("stc://base-0-4/relation:background", "Hintergrundwissen"))
+
+# Kanten einfach anhand ihrer IDs (canonized)
+# igr = graph_from_data_frame(
+#     complete$edgelist(T), 
+#     vertices = complete$verticeData(T),
+#     directed=FALSE
+# )
+igr.complete = sem.complete %>% as.igraph() %>% simplify
+```
+
+Das Hintergrundwissen ist für beide Teilnetzwerke relevant. Es wird daher erstmal oben extrahiert und dann unten hinzugefügt.
+
+Wichtig dabei: Man kann es oben nicht herausnehmen, weil Hintergrundwissen Relationen umfasst, welche erst in der Semantik definiert werden. Würde man es also "roh" extrahieren, würden sich einige Relationen auf Knoten beziehen, die es am Ende gar nicht mehr gibt. Das "background" ist daher auch ein unvollständiges Netzwerk.
+
+*TODO:* Die slice()-Methode muss zur Extraktion des Backgrounds evtl. auch alle Relationen mitnehmen, die kein Hintergrund sind, aber für die Definition der entsprechenden BlankNodes erforderlich sind.
+
+```{r}
+# Hier  macht das simplify() folgenden Unterschied aus:
+## IGRAPH b9ac15f UN-B 351 692 -- 
+## IGRAPH 75350f5 UN-B 351 639 -- 
+
+sem.spd =
+    methods[["text380"]] + methods[["text423"]] + methods[["text439"]] + methods[["text449"]] + methods[["text454"]] +
+    methods[["text585"]] + methods[["text592"]] + methods[["text602"]] + methods[["text626"]] + methods[["text647"]]
+    # +background
+
+igr.spd = sem.spd %>% as.igraph() %>% simplify()
+
+sem.cdu = 
+    methods[["text465"]] + methods[["text479"]] + methods[["text487"]] + methods[["text505"]] + methods[["text532"]] +
+    methods[["text554"]] + methods[["text566"]] + methods[["text613"]] + methods[["text635"]]
+    # +background
+
+igr.cdu = sem.cdu %>% as.igraph() %>% simplify()
+
+# x = complete$edgelist()
+# y = complete$verticeData()
+# xx=c(x[,1],x[,2])
+
+# lookup = "Putin"
+# View(x[c(grep(lookup, x[,1]), grep(lookup, x[,2])),])
+
+# Die canonized IDs können wir noch etwas kompakter schreiben
+shortIDs = function(x, limit=256) {
+    x = gsub("\\(\\s+", "(", x)
+    x = gsub("\\)\\s+", ")", x)
+    x = gsub("https://www.wikidata.org/wiki/", "W:", x, fixed=T)
+    x = gsub("https://dbpedia.org/page/", "D:", x, fixed=T)
+    x = gsub("https://www.openthesaurus.de/synonyme/", "T:", x, fixed=T)
+    x = gsub("stc://base-0-4/", "B:", x, fixed=T)
+    x = gsub("https://ifkw.lmu.de/xml-dev-0-1/", "C:", x, fixed=T)
+    # And then clip to 16 characters
+    x = substr(x, 1, limit)
+    return(x)
+}
+
+V(igr.complete)$desc = shortIDs(V(igr.complete)$name)
+V(igr.cdu)$desc = shortIDs(V(igr.cdu)$name)
+V(igr.spd)$desc = shortIDs(V(igr.spd)$name)
+
+save.image("M2.RData")
+
+noRelationIDs = function(x) {
+    x[grep("^\\(", x)] = NA
+    return(x)
+}
+
+colorSource = function(x) {
+    bg = as.logical(x["tag.bg"])
+    c = as.logical(x["tag.cdu"])
+    s = as.logical(x["tag.spd"])
+  if (bg) {
+    return("#CCCCCC")
+  }
+  if (c && s) {
+    return("#CC00CC")
+  }
+  if (c) {
+    return("#000000")
+  }
+  if (s) {
+    return("#FF0000")
+  }
+  return("#CCCCCC")
+}
+
+colorPlatform = function(x) {
+    bg = as.logical(x["tag.bg"])
+    f = as.logical(x["tag.facebook"])
+    t = as.logical(x["tag.twitter"])
+  if (bg) {
+    return("#CCCCCC")
+  }
+  if (f && t) {
+    return("#00FFFF")
+  }
+  if (t) {
+    return("#00CC66")
+  }
+  if (f) {
+    return("#0000FF")
+  }
+  return("#CCCCCC")
+}
+
+colorType = function(x) {
+  if (x["type"] == "iri") {
+    return("orange")
+  }
+  if (x["type"] != "iri") {
+    return("lightblue")
+  }
+  return("#CCCCCC")
+}
+
+
+# Only use entity IDs in the plot
+V(igr.complete)$name = noRelationIDs(V(igr.complete)$desc)
+
+x = as.data.frame(vertex_attr(igr.complete))
+# Die Farben könnten wir noch anhand der Tags ergänzen
+# Aber vor lauter labels sieht man ohnehin nicht viel
+```
+
+```{r}
+V(igr.complete)$color <- apply(x, FUN=colorType, MARGIN=1)
+png(
+  "export.igraph.type.png",
+  width     = 20,
+  height    = 16,
+  units     = "cm",
+  res       = 1200,
+  pointsize = 4
+)
+plot(igr.complete, vertex.size = 3, vertex.frame.width=0)
+dev.off()
+```
+```{r}
+V(igr.complete)$color <- apply(x, FUN=colorPlatform, MARGIN=1)
+png(
+  "export.igraph.platform.png",
+  width     = 20,
+  height    = 16,
+  units     = "cm",
+  res       = 1200,
+  pointsize = 4
+)
+plot(igr.complete, vertex.size = 3, vertex.frame.width=0)
+dev.off()
+```
+
+```{r}
+V(igr.complete)$color <- apply(x, FUN=colorSource, MARGIN=1)
+png(
+  "export.igraph.source.png",
+  width     = 20,
+  height    = 16,
+  units     = "cm",
+  res       = 1200,
+  pointsize = 4
+)
+plot(igr.complete, vertex.size = 3, vertex.frame.width=0)
+dev.off()
+```

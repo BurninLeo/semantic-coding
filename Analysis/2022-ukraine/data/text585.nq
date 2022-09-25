@@ -1,0 +1,21 @@
+<https://www.wikidata.org/wiki/Q189062> <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/hochgerüstet> _:rel1 .
+_:rel1 <http://purl.org/dc/terms/title> "hochgerüstete Nuklearmacht"  .
+_:rel9 <stc://base-0-4/locate in time> <https://www.wikidata.org/wiki/Q344>  .
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/expresses opinion> _:rel9 _:rel11 .
+_:rel11 <http://purl.org/dc/terms/title> "Olaf Scholz sagt, dass er nicht unbesonnen handeln wird"  .
+<https://dbpedia.org/page/Interview> <stc://base-0-4/assign context> <https://dbpedia.org/page/Stern_(magazine)> _:rel12 .
+_:rel12 <http://purl.org/dc/terms/title> "Interview mit dem Stern (Magazin)"  .
+_:rel11 <stc://base-0-4/assign spacial> _:rel12  .
+_:rel9 <stc://base-0-4/is a> <https://www.wikidata.org/wiki/Q1425577>  .
+<https://dbpedia.org/page/Russia> <stc://base-0-4/is a> _:rel1  .
+<stc://media-0-4/escalation> <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/nuklear> _:rel3 .
+_:rel3 <http://purl.org/dc/terms/title> "eine nukleare Eskalation"  .
+<https://ifkw.lmu.de/xml-dev-0-1/Militärische Konfrontation> <stc://base-0-4/assign context> <https://dbpedia.org/page/NATO> _:rel4 .
+_:rel4 <http://purl.org/dc/terms/title> "militärische Konfrontation mit der NATO"  .
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/wants not> _:rel4  .
+_:rel3 <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q15860072> _:rel6 .
+_:rel6 <http://purl.org/dc/terms/title> "eine nukleare Eskalation des Ukraine-Kriegs"  .
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/wants not> _:rel6  .
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/is a> <https://dbpedia.org/page/Chancellor_of_Germany>  .
+<https://dbpedia.org/page/Chancellor_of_Germany> <https://www.openthesaurus.de/synonyme/nicht%20tun> <https://ifkw.lmu.de/xml-dev-0-1/unbesonnenes Handeln> _:rel9 .
+_:rel9 <http://purl.org/dc/terms/title> "Olaf Scholz wird nicht unbesonnen Handeln"  .

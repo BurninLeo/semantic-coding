@@ -1,0 +1,160 @@
+---
+title: "Methoden 2022 - Import"
+author: "Dominik Leiner"
+date: "01 9 2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+for (tmpPackage in c("pander","knitr","tidyverse", "stringr")) {
+  if (!require(tmpPackage, character.only = T)) {
+    install.packages(tmpPackage, dependencies = T)
+    library(tmpPackage, character.only = T)
+  }
+}
+
+rm(list=ls())
+```
+
+## Zielsetzung
+
+1) In diesem Script soll der Import der Daten aus dem n-quads-Format (einzelne Dateien) nach R getestet werden.
+
+2) Weiterhin sollen hier erste Analyse-Möglichkeiten (und vielleicht Visualisierungen) ausprobiert werden.
+
+
+## Vorbereitung
+
+Die Daten müssen zunächst aus SoSci Survey ausgelesen und al .nq-Dateien gespeichert werden (E0.Encode-N-Quard.rmd).
+
+## Import
+
+Die Daten liegen in einzelnen Dateien (*.nq) vor, die Zeilenweise kodiert sind.
+
+In N-Quads existieren 3 verschieden Datentypen (https://dvcs.w3.org/hg/rdf/raw-file/default/nquads/index.html): IRIs, Literals (Texte) und BlankNodes (die internen IDs, die wir als IDs für Relationen auf Position 4 verwenden). Dafür definieren wir drei S4-Klassen in R.
+
+Die Datenstruktur für einen Text ist dann im ersten Schritt eine Liste von Vektoren (jeweils 3 oder 4 Elemente) der o.g. Klassen.
+
+Wir können für die Relation dann folgende Konstellationen haben:
+
+  * IRI <-IRI-> IRI
+  * IRI <-IRI-> Literal
+  * BlankNode <-IRI-> IRI
+  * IRI <-IRI-> BlankNode
+  * BlankNode <-IRI-> BlankNode
+  * BlankNode <-IRI-> Literal
+
+Auf dieser Basis wird eine S4-Klasse stcRelation definiert.
+
+Auch die Darstellung lässt sich durch die Klassen ein wenig optimieren.
+
+```{r}
+source("semantic-classes.R")
+```
+
+Unsere Entitäten brauchen wir für die Labels auch.
+
+```{r}
+#db = read.table("databank_frames_2022-05-26_15-05.csv", sep="\t", header = T, quote = "\"", fileEncoding = "UTF-16LE", fill=T)
+options(encoding = "native.enc")
+db = read.table("data/databank_frames.2022-09-01.utf8.csv", sep=",", header = T, fileEncoding = "UTF-8", fill = T)
+iriLabels = db$D1
+names(iriLabels) = db$D5
+iriLabels = iriLabels[iriLabels != ""]
+rm(db)
+
+# Additions
+iriLabels["https://www.wikidata.org/wiki/Q212"] = "Ukraine"
+```
+
+
+Jetzt können wir importieren und erstmal eine Rohversion speichern.
+
+```{r}
+
+importNQuads = function(files) {
+    data = list()
+    for (filename in files) {
+        # Extract the name without extension
+        filename2 = gsub("\\\\", "/", filename)
+        relName = sub("^(.*/)?([a-z0-9]+)(\\..*)$", "\\2", filename2)
+        
+        relations = importNQuads2(filename, source=relName)
+        data[[relName]] = new("semantic", name=relName, relations=relations)
+    }
+    return(data)
+}
+
+importNQuads2 = function(filename, source=NA) {
+    # Read all lines
+    lines = readLines(filename, encoding = "UTF-8")
+    relations = NULL
+    elements = str_extract_all(lines, "(<.[^>]+>)|(\"[^\"]+\")|(_:[a-z0-9]+)")
+    for (i in 1:length(elements)) {
+        # Package the elements into the proper classes
+        line = elements[[i]]
+        typeIRI = grepl("^<.[^>]+>$", line) & grepl("://", line)
+        typeBlankNode = grepl("^_:[a-z0-9]+$", line)
+        typeLiteral = grepl("^\"[^\"]+\"$", line) | (grepl("^<.[^>]+>$", line) & !grepl("://", line))
+        lineX = c()
+        for (e in 1:length(line)) {
+            val = line[e]
+            if (typeIRI[[e]]) {
+              # We may have a readble label for the IRI
+              iriID = substr(val, 2, nchar(val) - 1)
+              lineItem = new("stcIRI", id=iriID, label=iriLabels[iriID])
+            } else if (typeLiteral[[e]]) {
+              lineItem = new("stcLiteral", label=substr(val, 2, nchar(val) - 1))
+            } else if (typeBlankNode[[e]]) {
+              lineItem = new("stcBlankNode", label=val)
+            } else {
+              lineItem = NA
+            }
+            lineX[[e]] = lineItem
+        }
+        
+        # Make sure there are no more than 4 elements
+        if (length(lineX) < 3) {
+            warning(paste("Line with less than 3 elements:", line, "\n"))
+        }
+        if (length(lineX) > 4) {
+            warning(paste("Line with more than 4 elements:", line, "\n"))
+            lineX = lineX[1:4]
+        }
+        if (length(line) == 3) {
+            relations[[i]] = new("stcRelation", entityA=lineX[[1]], operator=lineX[[2]], entityB=lineX[[3]], source=source)
+        }
+        if (length(line) == 4) {
+            relations[[i]] = new("stcRelation", entityA=lineX[[1]], operator=lineX[[2]], entityB=lineX[[3]], id=lineX[[4]], source=source)
+        }
+        
+        # relations[[i]] = lineX
+    }
+    return(relations)
+}
+# tmp = importNQuads2("text380.nq")
+
+# list.files(pattern=".nq")
+methods = importNQuads(
+  paste("data/",
+    c(
+        # Kodierung Nr. 1 (Tweets)
+        c("text380", "text423", "text439", "text449", "text454", "text465", "text479", "text487", "text505", "text532"),
+        # Kodierung Nr. 2 (Facebook)
+        c("text554", "text566", "text585", "text592", "text602", "text613", "text626", "text635", "text647")
+        # Bilder-Kodierung nicht Teil des Experiments -> "text655", "text663"
+    ),
+    ".nq",
+    sep="")
+)
+
+rm(importNQuads)
+rm(importNQuads2)
+
+save.image("M0.RData")
+```
+
+**TODO:** Die FOR-Schleife ist noch ineffizient und sollte durch apply() ersetzt werden (wobei es insgesamt schon flott läuft).
+

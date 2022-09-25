@@ -1,0 +1,438 @@
+---
+title: "Netzwerkanalyse"
+author: "Dominik Leiner"
+date: "13.09.2022"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+for (tmpPackage in c("pander","knitr","tidyverse", "igraph")) {
+  if (!require(tmpPackage, character.only = T)) {
+    install.packages(tmpPackage, dependencies = T)
+    library(tmpPackage, character.only = T)
+  }
+}
+
+rm(list=ls())
+source("semantic-classes.R")
+load("M2.RData")
+
+printNodes = function(v, cases=NA, caption=NA, limit=-1) {
+    if ((length(cases) == 1) && is.na(cases)) {
+        cases = rep(T, length(v))
+    }
+    res = data.frame(row.names=1:sum(cases))
+    res$occurences = v$occur[cases]
+    res$label = iriLabels[gsub("^<|>$", "", v$name[cases])]
+    res$desc = gsub("^<|>$", "", v$desc[cases])
+    res = res[order(res$occurences, decreasing = T),]
+    
+    if (limit > 0) {
+        res = res[1:limit,]
+    }
+    
+    res %>% kable(caption=caption, row.names = F)
+}
+```
+
+Wir wollen jetzt ein paar Methoden der Netzwerkanalytik ausprobieren. Starten wir erstmal mit ein bisschen Basis-Descrtiptives. ANzahl der Knoten und Verbindungen.
+
+
+## Deskriptive Statistik
+
+Die Basis ist ein Gesamtnetzwerk mit `r length(sem.complete$relations)` Relationen, davon `r sum(sem.complete$relationsContainTag(c("spd","cdu")))` direkt aus den Texten, der Rest Hintergrundwissen. Darauf entfallen `r sum(sem.complete$relationsContainTag(c("twitter")))` Relationen auf Twitter und `r sum(sem.complete$relationsContainTag(c("facebook")))` auf Facebook.
+
+Wir haben insgesamt (2-mal 5 Tweets und 2-mal 3 Facebook-Posts) ein Netzwerk mit `r length(V(igr.complete))` Knoten und `r length(E(igr.complete))` Kanten gebaut.
+Einige Knoten (n=`r `sum(V(igr.complete)$type == "iri")`) sind dabei genuine Entitäten (IRIs), die restlichen sind Konzepte, also Entitäten, die sich durch Relationen der vorgenannten Entitäten definieren.
+
+Sehen wir uns das mal getrennt nach der Quelle (SPD- oder CDU-Zugehörigkeit) an. Hier sehen wir die Statistik zum Gesamt-Netzwerk und zu den beiden Teil-Netzwerken.
+
+```{r}
+res = data.frame(rbind(
+    "complete" = c(
+        "edges" = length(E(igr.complete)),
+        "vertices" = length(V(igr.complete)),
+        "vert.nb" = sum(V(igr.complete)$tag.spd | V(igr.complete)$tag.cdu),
+        "vert.iri" = sum(V(igr.complete)$type == "iri"),
+        "vert.iri.nb" = sum((V(igr.complete)$type == "iri") & (V(igr.complete)$tag.spd | V(igr.complete)$tag.cdu))
+    ),
+    "spd" = c(
+        "edges" = length(E(igr.spd)),
+        "vertices" = length(V(igr.spd)),
+        "vert.nb" = sum(V(igr.spd)$tag.spd),
+        "vert.iri" = sum(V(igr.spd)$type == "iri"),
+        "vert.iri.nb" = sum((V(igr.spd)$type == "iri") & V(igr.spd)$tag.spd)
+    ),
+    "cdu" = c(
+        "edges" = length(E(igr.cdu)),
+        "vertices" = length(V(igr.cdu)),
+        "vert.nb" = sum(V(igr.cdu)$tag.cdu),
+        "vert.iri" = sum(V(igr.cdu)$type == "iri"),
+        "vert.iri.nb" = sum((V(igr.cdu)$type == "iri") & V(igr.cdu)$tag.cdu)
+    )
+))
+
+res = rbind(
+    res,
+    "diff" = res["spd",] + res["cdu",] - res["complete",]
+)
+
+res %>% t() %>% kable()
+```
+
+Bei den Teilnetzwerken hatte ich - testweise mal extra - das Hintergrundwissen aus dem Gesamtneztzwerk hinzugefügt. Das ist nur so halb-korrekt bisher, weil das Hintergrundwissen sich vielfach auf Relationen bezieht, die in dem Datenpaket dann fehlen (weil die explizit gesagt wruden). Wenn wir  Hintergrundwissen mitnehmen, kämen wir auf 267 (SPD) bzw. 397 (CDU) Verbindungen und auf 220 (SPD) bzw. 223 (CDU) Knoten. Die Differenz/Überscheidung wären dann 92 Knoten und 125 Kanten (also deutlich mehr ... weil es eben teilweise dasselbe Netzwerk wäre). Bei den Statistiken ohne Hintergrundwissen (.nb) ändert sich natürlich nichts.
+
+Die letze Zeile "vert.iri.nb" schließt bei der Zählung der Entitäten das kodierte Hintergrundwissen aus.
+
+**Notiz:** Die Anzahl der Kanten ist durch ein simplify() - also das entfernen doppelter Verbindungen - von 692 auf 639 gefallen. Wir hatten also (53 = 7 Prozent) gleiche Verbindungen. Da sich die Verbindungen aus unseren Relationen ergeben, kann es aber sein, dass es sich dabei um qualitativ unterschiedliche Verbindungen gehandelt hat. Oder es kann auch sein, dass einfach mehrfach dasselbe Hintergrundwissen kodiert wurde. Das fällt hier jedenfalls raus.
+
+Das sieht insgesamt schonmal hübsch symmetrisch aus, was die beiden Quellen angeht (SPDU/CDU). Anhand der Differenz (letzte Spalte) sehen wir auch, dass es bei den Verbindungen (und das ist jetzt unabhängig von der Qualität der Verbindung!) keine Überschneidungen zwischen den Netzwerken gibt. Diese finden wir (in unserem kleinen Sample) nur bei den Entitäten.
+
+**Wichtig:** Wir sehen hier die Häuigkeiten an, wie häufig die Entitäte im Netzwerk genannt wurden. Das wurde beim Export aus der Semantik ins Netzwerk explizit als Information gezählt.
+
+Jetzt können wir uns ansehen, welche Knoten im Gesamtnetzwerk exklusiv zu einem der Lager gehören oder eben nicht.
+
+```{r}
+v = V(igr.complete)
+res = data.frame(rbind(
+    "complete" = c(
+        "vertices" = length(v),
+        "vert.iri.nb" = sum((v$type == "iri") & (v$tag.cdu | v$tag.spd))
+    ),
+    "excl.spd" = c(
+        "vertices" = sum(v$tag.spd & !v$tag.cdu),
+        "vert.iri.nb" = sum(v$tag.spd & !v$tag.cdu & (v$type == "iri"))
+    ),
+    "excl.cdu" = c(
+        "vertices" = sum(v$tag.cdu & !v$tag.spd),
+        "vert.iri.nb" = sum(v$tag.cdu & !v$tag.spd & (v$type == "iri"))
+    ),
+    "both" = c(
+        "vertices" = sum(v$tag.cdu & v$tag.spd),
+        "vert.iri.nb" = sum(v$tag.cdu & v$tag.spd & (v$type == "iri"))
+    )
+))
+res %>% t() %>% kable()
+```
+Es sind überschaubare 18 Entitäten, welche die beiden Netzwerke verbinden. 
+
+```{r}
+cases = (v$tag.cdu & v$tag.spd & (v$type == "iri"))
+printNodes(v, cases, caption="Entitäten in Beiträgen von SPD und CDU)")
+```
+
+Die Ukraine haben wir in der Kodierung über zwei unterschiedliche IDs abgebildet, eines für die Ukraine und eines für den Hashtah #Ukraine (einmal dbPedia und einmal WikiData). Bevor wir das zusammengefasst hatten, war die Entität zeimal mit 10 und 11 Occurences in der Tabelle.
+
+*TODO:* Wir müssen im Hintergrundwissen Relationen festlegen, welche die Gleichheit von zwei Entitäten definieren, und wir müssen die Semantik dann anhand dieser Relationen vereinfachen. Es sollte in dem Fall reichen, alle Vorkommnisse der "Kopie" durch die "Original"-Entität zu ersetzen.
+
+Aber ich sehe da immer noch viel Raum für exklusive Entitäten. Sehen wir uns doch einmal die Listen für CDU und SPD an, jeweils die Top 20 (inkl. solchen die (auch/nur) als Hintergrundwissen auftauchen.
+
+```{r}
+cases = (!v$tag.cdu & v$tag.spd & (v$type == "iri"))
+printNodes(v, cases, "Entitäten, die nur bei der SPD auftauchen", limit=20)
+
+cases = (v$tag.cdu & !v$tag.spd & (v$type == "iri"))
+printNodes(v, cases, "Entitäten, die nur bei der CDU auftauchen", limit=20)
+```
+
+Bei der CDU haben wir das Hashtag #Putin, welches die SPD nicht verwendet. Das ist mal ein Beispiel für einen formalen Unterschied. Und wenig überraschend spricht die SPD auch nicht von der CDU oder deren Politikern - und die CDU ebenso wenig von SPD-Politikern oder der SPD.
+
+Insgesamt werden die Entitäten aber generell nur in einzelnen Beiträgen genannt. Es sind nur eine Handvoll Entitäten, die in mehreren Beiträgen vorkommen. Und auch hier nochmal der Hinweis: Wir sehen wir Netzwerk-Knoten, nicht die Nennungen im Text.
+
+
+## Netzwerke vergleichen
+
+Wir haben ja zwei Netzwerke, die sich auch separat betrachten lassen. Dass diese ungefähr gleich groß sind, haben wir oben ja schon anhand der Anzahl der Knoten und Verbindungen gesehen.
+
+Sehen wir uns mal die häufigsten Entitäten in jede Teilnetzwerk an (Top 20). Reines Hintergrundwissen ist hier wieder rausgefiltert.
+
+```{r}
+v.spd = V(igr.spd)
+v.cdu = V(igr.cdu)
+
+printNodes(v.spd, v.spd$tag.spd & (v.spd$type == "iri"), caption="Entitäten SPD", limit=20)
+printNodes(v.cdu, v.cdu$tag.cdu & (v.cdu$type == "iri"), caption="Entitäten CDU", limit=20)
+```
+
+Putin scheint der CDU definitiv wichtiger als der SPD. Dafür ist die SPD mehr am deutschen Bundeskanzler interessiert. Keine Überraschung, sieht valide aus. Aber soweit wären wir auch mit einer named entity recognition gekommen.
+
+Bisher hatten wir uns die Häufigkeit des Auftretens von Entitäten ansgesehen. Jetzt konzentrieren wir uns auf das Netzwerk - also die Knoten (die dann jeweils nur einmal vorkommen) und womit sie verbunden sind.
+
+**Notiz:** Die Kanten haben wir uns noch gar nicht genauer angeschaut.
+
+
+### Network Centrality
+
+Zentralität ist ursprünglich durch die Rolle der Knoten (Personen/Organisationen) in einem Netzwerk definiert. Wenn wir das hier auf Elemente der Kommunikation übertragen, dann sind einige Ideen wie das "Vernetzen zwischen unterschiedlichen Netzwerk-Bereichen" nicht wirklich passend, weil z.B. keine Informationen durch die Knoten fließt. Auch können wir z.B. keine sinnvollen Aussagen über Machtverteilungen und Gleichheit treffen.
+
+Hilfreich: https://rpubs.com/pjmurphy/igraphCentrality
+
+Die Verwendung der Maße wäre also nochmal theoretisch zu erörtern. Im Moment geht es aber erstmal darum, ob wir anhand etablierter Maße Unterschiede zwischen den Netzwerken erkennen, welche aus der Kommunikation unterschiedlicher Quellen entstanden sind.
+
+* Degree Centrality - Die Degree Centrality (Verbindung zu anderne Knoten) dürfte ziemlich nahe an der Häufigkeit des Auftretens liegen, denn wir haben bisher nur selten (überhaupt?) mehrfach dieselbe Relationen beobachtet.
+* Closeness Centrality - hier sehen wir, welche Elemente im Netzwerk zentraler liegen und welche eher außen
+* Betweenness Centrality - gehen "Ideen" durch Entitäten hindurch? Zumindest sehen wir hier, über welche Ideen unterschiedliche Konzepte verbunden sind.
+
+Nachdem die Maße auf sehr unterschiedlichen Skalen liegen, sind in der folgenden Übersicht jeweils normalisierte Werte angegeben.
+
+Wir haben ein Mini-Netzwerk ("Sieg des Stärkeren"), das mit dem Rest nicht verbunden ist. Eventuell ein Fehler bei der Kodierung. Dessen Elemente scoreen bei der Closeness sehr hoch (1), was ich aber als Artefakt bewerte. Deshalb sortiere ich die Tabelle nur nach Degree und Betweenness.
+
+```{r}
+res = data.frame(row.names = V(igr.complete)$name)
+res$desc = iriLabels[gsub("^<|>$", "", row.names(res))]
+res$type = V(igr.complete)$type
+res$degree.spd = NA
+res$close.spd = NA
+res$between.spd = NA
+res$degree.cdu = NA
+res$close.cdu = NA
+res$between.cdu = NA
+
+#x = degree(igr.spd)
+#res[names(x), "degree.spd"] = x
+x = degree(igr.spd, normalized = T)
+res[names(x), "degree.spd"] = x
+x = closeness(igr.spd, normalized = T)
+res[names(x), "close.spd"] = x
+x = betweenness(igr.spd, normalized = T)
+res[names(x), "between.spd"] = x
+
+#x = degree(igr.cdu)
+#res[names(x), "degree.cdu"] = x
+x = degree(igr.cdu, normalized = T)
+res[names(x), "degree.cdu"] = x
+x = closeness(igr.cdu, normalized = T)
+res[names(x), "close.cdu"] = x
+x = betweenness(igr.cdu, normalized = T)
+res[names(x), "between.cdu"] = x
+
+res$avg = rowMeans(res[c("degree.spd", "between.spd", "degree.cdu", "between.cdu")], na.rm=T)
+res$full = shortIDs(row.names(res))
+res$full = gsub("<", "[", res$full, fixed=T)
+res$full = gsub(">", "]", res$full, fixed=T)
+
+options(knitr.kable.NA = '')
+res[order(res$avg, decreasing = T),][1:20,] %>% kable(row.names = F, digits=2)
+```
+Was sehen wir hier? Olaf Scholz ist als Bundeskanzler sehr zentral - für die SPD. Und überhaupt sind die Zentralitätsgrade bei der SPD höher (mittlerer degree `r degree(igr.spd, normalized = T) %>% mean() %>% format(digits=3)`) als bei der CDU (`r degree(igr.cdu, normalized = T) %>% mean() %>% format(digits=3)`). Vor allem aber bei den zentralen Entitäten. Die Ukraine ist vielen Entitäten sehr nah (Closeness), aber dabei steht sie eher am Rande (Degree).
+
+Hier sehen wir aber auch, dass die Modellierung neuer Ideen als eigene Entität mit Verbidung zu den zugrundeliegenden Entitäten sich nicht ideal mit der Netzwerk-Idee verträgt. So haben wir die "Waffenlieferungen an die Ukraine" einmal als eigene Entität definiert und einmal als Relation mit Label ( https://www.wikidata.org/wiki/Q452237 <stc://base-0-4/assign context> <https://ifkw.lmu.de/xml-dev-0-1/Lieferung von Waffen an die Ukraine> ).
+
+Überhaupt ist das Netzwerk noch ziemlich dünn für die Analyse der Zentralität. Wir erfassen hier ein paar zentrale Entitäten (BRD, Schulz, SPD, Waffenlieferungen, Merz, CDU/CSU, Putin) - und es fällt auf, dass es auch fast nur Akteure sind, die zentral liegen - aber für eine Bewertung der nachgelagerten Entitäten haben wir im Moment zu wenige Daten. Wenn noch etwas spannend ist, dann dass die Ukraine erst auf Platz 20 kommt. Das könnte aber mit der Kodierung durch zwei Entitäten zusammenhängen.
+
+
+## Gezielte Analyse I
+
+Fragestellung: Was verbindet die CDU mit Deutschland, was die SPD?
+
+Dafür können wir uns - sowohl was die Anzahl der Verbindungen angeht als auch deren Art - einmal die Verbindungen in jedem Teilnetzwerk ansehen. Wobei ich hier mit den Relationen arbeite, um Qualität und Anzahl zu behalten.
+
+Das ist nicht ganz trivial, weil die Entität gegenüber "Deutschland" ja eine Relation sein kann. Vielleicht beginnen wir also erstmal mit den Operatoren, die an Deutschland hängen - bei SPD und CDU/CSU.
+
+```{r}
+relations = sem.spd$relations[sem.spd$relationsContainIRI("https://dbpedia.org/page/Germany")]
+res = NULL
+for (rel in relations) {
+    if (rel$tags$contains("spd")) {
+        res = c(res, rel$operator$id)
+    }
+}
+table(res) %>% kable(caption="Operatoren rund um Deutschland bei SPD-Posts")
+
+relations = sem.cdu$relations[sem.cdu$relationsContainIRI("https://dbpedia.org/page/Germany")]
+res = NULL
+for (rel in relations) {
+    if (rel$tags$contains("cdu")) {
+        res = c(res, rel$operator$id)
+    }
+}
+table(res) %>% kable(caption="Operatoren rund um Deutschland bei CDU-Posts")
+```
+
+Nun gut, dann sehen wir uns mal die "Nachbarn" in der Semantik an - direkte und alle, die in einer mit "Deutschland" verbundenen Relation stecken.
+
+```{r}
+getIRIs = function(relation, semantic, depth=0) {
+    neighbors = NULL
+    
+    if (!inherits(relation, "stcRelation")) {
+        return(NULL)
+    }
+    
+    # Entity A
+    if (inherits(relation$entityA, "stcIRI")) {
+        neighbors = rbind(neighbors, c("iri" = relation$entityA$id, "depth" = depth))
+    } else if (inherits(relation$entityA, "stcBlankNode")) {
+        nodeRel = semantic$getNamedRelation(relation$entityA$label)
+        neighbors = rbind(neighbors, getIRIs(nodeRel, semantic=semantic, depth+1))
+    }
+    
+    # Entity B
+    if (inherits(relation$entityB, "stcIRI")) {
+        neighbors = rbind(neighbors, c("iri" = relation$entityB$id, "depth" = depth))
+    } else if (inherits(relation$entityB, "stcBlankNode")) {
+        nodeRel = semantic$getNamedRelation(relation$entityB$label)
+        neighbors = rbind(neighbors, getIRIs(nodeRel, semantic=semantic, depth+1))
+    }
+    
+    return(neighbors)
+}
+
+listIRIs = function(sem, iri, tags=NULL) {
+    relations = sem$relations[sem$relationsContainIRI(iri)]
+    iris = NULL
+    for (rel in relations) {
+        if (is.null(tags) || rel$tags$contains(tags)) {
+            iris = rbind(iris, getIRIs(rel, semantic=sem.spd))
+        }
+    }
+    # May not have found anything
+    if (is.null(iris)) {
+        return(NULL)
+    }
+    
+    iris = as.data.frame(iris)
+    iris$depth = as.numeric(iris$depth)
+    res = iris %>%
+        group_by(iri) %>%
+        summarize(depth=min(depth), cnt=n()) %>%
+        arrange(-cnt, depth)
+    res$title = iriLabels[res$iri]
+    
+    res = res[res$iri != iri,]
+    
+    return(res)
+}
+
+listIRIs(sem.spd, "https://dbpedia.org/page/Germany", "spd") %>% kable(caption="Umgebung von Deutschland in SPD-Posts")
+listIRIs(sem.cdu, "https://dbpedia.org/page/Germany", "cdu") %>% kable(caption="Umgebung von Deutschland in CDU-Posts")
+
+```
+
+## Gezielte Analyse II
+
+Wie nah sind sich Deutschland und Russland bei der CDU, bei der SPD - also wie viele Knoten sind dazwischen?
+
+Dass wir bei de CDU einen direkte Verbindung zwischen Deutschland und Putin haben, haben wir oben schon gesehen. Das könnte jetzt auch ein Zufallstreffer sein. Schauen wir also mal, wie viele Verbindungen wir finden und wie lang diese sind. Erstmal müssen wir dafür (z.B. mit 4 Rekursionen) alle möglichen Verbindungen finden.
+
+Das können wir z.B. so machen, dass wir in jeder Runde die neuen IRIs einsammeln und von denen wieder sammeln. Aber nur die neuen.
+
+Klären wir doch erstmal, ob Russland bei den Posts aus beiden Parteien überhaupt vorkommt.
+
+```{r}
+sum(sem.spd$relationsContainIRI("https://dbpedia.org/page/Russia"))
+sum(sem.cdu$relationsContainIRI("https://dbpedia.org/page/Russia"))
+```
+
+In Ordnung, bei der CDU/CSU kommt Russland überhaupt nicht vor. Ineressant, aber nicht hilfreich für die Analyse. Was ist mit Moskau? Haben wir überhaupt nicht. Dann muss es eben doch Putin werden... Dafür solten wir ja genug Nennungen haben.
+
+```{r}
+sum(sem.spd$relationsContainIRI("https://dbpedia.org/page/Vladimir_Putin"))
+sum(sem.cdu$relationsContainIRI("https://dbpedia.org/page/Vladimir_Putin"))
+```
+
+
+
+```{r}
+
+listRoutes = function(sem, iriA, iriB, levels=5, tags=NULL) {
+    # Find paths from iriA that have not yet been walked
+    # let us keep a register of IRIs that were already used
+    paths = data.frame()
+    # Okay, four steps
+    paths = rbind(paths, list("level" = 0, "last" = iriA, "i0" = iriA))
+    iriDone = c(iriA, iriB) # Always stop at the target node
+    for (level in 1:levels) {
+        # Go through all the paths that have the previous level's length
+        pv = paste("i", (level-1), sep="")
+        pathsToDo = which((paths$level == level-1) & (paths$last != iriB))
+        # Add the next column
+        pn = paste("i", level, sep="")
+        paths[[pn]] = NA
+
+        # Go through the previous paths
+        for (pathRow in pathsToDo) {
+            pvPath = paths[pathRow,]
+            pvPath[["level"]] = level 
+            iriID = paths[pathRow, pv]
+            neighbors = listIRIs(sem, iriID, tags)
+            for (newIRI in neighbors$iri) {
+                if ((newIRI == iriB) || !(newIRI %in% iriDone)) {
+                    pvPath[[pn]] = newIRI
+                    pvPath[["last"]] = newIRI
+                    paths = rbind(paths, pvPath)
+                    iriDone = c(iriDone, newIRI)
+                }
+            }
+        }
+    }
+    # Now filter, using only those with the proper start and end
+    paths = paths[paths$last == iriB,]
+    return(paths)
+    # # Get the relations (and operators) that actually connect the IRIs
+    # routes = paths
+    # for (level in 2:levels) {
+    #     pv = paste("i", (level-1), sep="")
+    #     pn = paste("i", level, sep="")
+    #     on = paste("op", (level-1), sep="")
+    #     routes[[on]] = NA
+    #     # For each route
+    #     for (routeNum in 1:nrow(routes)) {
+    #         # Find all such relations
+    #         for (rel in sem$relations) {
+    #             # Okay, there are indirect relations, so we stop right now and here
+    #         }
+    #     }
+    # }
+}
+
+# Replace the IRIs by labels and/or the simplified names
+mapIRILabels = function(df, iriLabels) {
+    for (tm in names(df)) {
+        if (is.character(df[[tm]])) {
+            lab = iriLabels[df[[tm]]]
+            lab[is.na(lab)] = shortIDs(df[is.na(lab), tm])
+            df[[tm]] = lab
+        }
+    }
+    return(df)
+}
+
+# sem.complete$relations[sem.complete$relationsContainIRI("https://dbpedia.org/page/Germany")]
+
+# We also use routes through background knowledge
+listRoutes(sem.spd, "https://dbpedia.org/page/Germany", "https://dbpedia.org/page/Vladimir_Putin", levels=8) %>% 
+    mapIRILabels(iriLabels) %>% 
+    kable(caption = "Verbindungen BRD-Putin auf Basis der SPD-Posts", row.names = F)
+
+listRoutes(sem.cdu, "https://dbpedia.org/page/Germany", "https://dbpedia.org/page/Vladimir_Putin", levels=8) %>% 
+    mapIRILabels(iriLabels) %>%
+    kable(caption = "Verbindungen BRD-Putin auf Basis der CDU-Posts", row.names = F)
+
+```
+
+Bei den SPD-Posts führt jede Beziehung zwischen der BRD und Putin über den Krieg bzw. die Waffenlieferungen. Bei den CSU-Posts gibt es eine direkte Verbindung und eine über die Ukraine.
+
+Wir können uns auch die Pfade zwischen Deutschland und der Ukraine mal ansehen.
+
+```{r}
+listRoutes(sem.spd, "https://dbpedia.org/page/Germany", "https://dbpedia.org/page/Ukraine", levels=8) %>% 
+    mapIRILabels(iriLabels) %>% 
+    kable(caption = "Verbindungen BRD-Ukraine auf Basis der SPD-Posts", row.names = F)
+
+listRoutes(sem.cdu, "https://dbpedia.org/page/Germany", "https://dbpedia.org/page/Ukraine", levels=8) %>% 
+    mapIRILabels(iriLabels) %>%
+    kable(caption = "Verbindungen BRD-Ukraine auf Basis der CDU-Posts", row.names = F)
+
+```
+
+Eine direkte Verbindung haben wir da in beiden Fällen. Spannend aber, dass alle weiteren Wege über Waffenlieferungen führen. Bei der SPD dann noch über Scholz, die SPD, die Regierung und Putin ... es sind definitiv mehr Wege, die hier in die Ukraine führen.
+
+
+### Notizen ###
+
+Bei der Kodierung "Das Recht der Stärkeren darf nicht über die Stärke des Rechts siegen" haben wir ein separates Mini-Netzwerk bekommen. Das liegt m.E daran, weil die beiden Aspekte der Aussage als Entitäten definiert wurden, aber keinen Bezug zu den Entitäten "Recht" und "Stärke" bekommen haben.

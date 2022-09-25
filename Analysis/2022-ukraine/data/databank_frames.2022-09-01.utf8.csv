@@ -1,0 +1,351 @@
+KEY,D0,D1,D5
+attribute.stc://base-0-4/attrbute:require value,attrbute:require value,Attribut:Wert erforderlich,stc://base-0-4/attrbute:require value
+attribute.stc://base-0-4/attribute:abstract,attribute:abstract,Attribut:abstrakt,stc://base-0-4/attribute:abstract
+attribute.stc://base-0-4/attribute:defines class,attribute:defines class,Attribut:definiert Klasse,stc://base-0-4/attribute:defines class
+attribute.stc://base-0-4/attribute:limitation,attribute:limitation,Attribut:Einschränkung,stc://base-0-4/attribute:limitation
+attribute.stc://base-0-4/entity:abstract,entity:abstract,Abstrakte Kategorie,stc://base-0-4/entity:abstract
+attribute.stc://base-0-4/entity:characteristic,entity:characteristic,Eigenschaften-Entität,stc://base-0-4/entity:characteristic
+attribute.stc://base-0-4/entity:class,entity:class,Klasse von Entitäten,stc://base-0-4/entity:class
+attribute.stc://base-0-4/entity:schema,entity:schema,Schema-Eintität,stc://base-0-4/entity:schema
+attribute.stc://base-0-4/operator:activity,operator:activity,Operator:Handlung,stc://base-0-4/operator:activity
+attribute.stc://base-0-4/operator:causality,operator:causality,Operator:Kausalität,stc://base-0-4/operator:causality
+attribute.stc://base-0-4/operator:communication,operator:communication,Operator:Kommunikation,stc://base-0-4/operator:communication
+attribute.stc://base-0-4/operator:decision,operator:decision,Operator:Meinungsäußerung,stc://base-0-4/operator:decision
+attribute.stc://base-0-4/operator:defines,operator:defines,Operator:definiert,stc://base-0-4/operator:defines
+attribute.stc://base-0-4/operator:relation,operator:relation,Operator:Verhältnis,stc://base-0-4/operator:relation
+attribute.stc://base-0-4/relation:background,relation:background,Hintergrundwissen,stc://base-0-4/relation:background
+attribute.stc://base-0-4/relation:defines,relation:defines,definiert eine neue Relation,stc://base-0-4/relation:defines
+attribute.stc://base-0-4/relation:figurative,relation:figurative,bildlich zu verstehen,stc://base-0-4/relation:figurative
+attribute.stc://base-0-4/relation:past,relation:past,vergangene Handlung/Ereignis,stc://base-0-4/relation:past
+attribute.stc://base-0-4/relation:possible,relation:possible,mögliche Handlung/Ereignis,stc://base-0-4/relation:possible
+attribute.stc://base-0-4/SchemePendingDecision,SchemePendingDecision,Operator:Entscheidung,stc://base-0-4/SchemePendingDecision
+category.https://schema.org/Event,https://schema.org/Event,Ereignis,https://schema.org/Event
+category.https://schema.org/Person,https://schema.org/Person,Natürliche Person,https://schema.org/Person
+category.https://schema.org/Place,https://schema.org/Place,Ort,https://schema.org/Place
+category.stc://base-0-4/ActingEntity,ActingEntity,Akteur,stc://base-0-4/ActingEntity
+category.stc://base-0-4/Activity,Activity,Handlung,stc://base-0-4/Activity
+category.stc://base-0-4/Context,Context,Kontext,stc://base-0-4/Context
+category.stc://base-0-4/Institution,Institution,Institution,stc://base-0-4/Institution
+category.stc://base-0-4/Issue,Issue,Thema,stc://base-0-4/Issue
+category.stc://base-0-4/LegalPerson,LegalPerson,Juristische Person,stc://base-0-4/LegalPerson
+category.stc://base-0-4/PersonEntity,PersonEntity,Abstrakte Person,stc://base-0-4/PersonEntity
+category.stc://base-0-4/Quantity,Quantity,Anteil,stc://base-0-4/Quantity
+category.stc://base-0-4/Scheme,Scheme,Schema,stc://base-0-4/Scheme
+category.stc://base-0-4/SocialGroup,SocialGroup,Soziale Gruppe,stc://base-0-4/SocialGroup
+category.stc://base-0-4/SpacialContext,SpacialContext,Örtliche Kontext,stc://base-0-4/SpacialContext
+category.stc://base-0-4/TemporalContext,TemporalContext,Zeitlicher Kontext,stc://base-0-4/TemporalContext
+entity.https://dbpedia.org/page/Berlin,Berlin (Stadt),Berlin (Stadt),https://dbpedia.org/page/Berlin
+entity.https://dbpedia.org/page/Bundestag,Deutscher Bundestag,Deutscher Bundestag,https://dbpedia.org/page/Bundestag
+entity.https://dbpedia.org/page/Cabinet_of_Germany,Deutsche Bundesregierung,Deutsche Bundesregierung,https://dbpedia.org/page/Cabinet_of_Germany
+entity.https://dbpedia.org/page/Chancellor_of_Germany,Deutsche/r Bundeskanzler/in,Deutsche/r Bundeskanzler/in,https://dbpedia.org/page/Chancellor_of_Germany
+entity.https://dbpedia.org/page/Christian_Democratic_Union_of_G,Christlich Demokratische Union (CDU),Christlich Demokratische Union (CDU),https://dbpedia.org/page/Christian_Democratic_Union_of_Germany
+entity.https://dbpedia.org/page/Emmanuel_Macron,Emmanuel Macron,Emmanuel Macron,https://dbpedia.org/page/Emmanuel_Macron
+entity.https://dbpedia.org/page/Friedrich_Merz,Friedrich Merz,Friedrich Merz,https://dbpedia.org/page/Friedrich_Merz
+entity.https://dbpedia.org/page/Germany,Bundesrepublik Deutschland,Bundesrepublik Deutschland,https://dbpedia.org/page/Germany
+entity.https://dbpedia.org/page/Interview,Interview,Interview,https://dbpedia.org/page/Interview
+entity.https://dbpedia.org/page/J%C3%BCrgen_Trittin,Jürgen Trittin,Jürgen Trittin,https://dbpedia.org/page/J%C3%BCrgen_Trittin
+entity.https://dbpedia.org/page/Johann_Wadephul,Johann Wadephul,Johann Wadephul,https://dbpedia.org/page/Johann_Wadephul
+entity.https://dbpedia.org/page/Kevin_Kühnert,Kevin Kühnert,Kevin Kühnert,https://dbpedia.org/page/Kevin_Kühnert
+entity.https://dbpedia.org/page/Lars_Klingbeil,Lars Klingbeil,Lars Klingbeil,https://dbpedia.org/page/Lars_Klingbeil
+entity.https://dbpedia.org/page/Mariupol,Mariupol,Mariupol,https://dbpedia.org/page/Mariupol
+entity.https://dbpedia.org/page/NATO,NATO (Militärbündnis),NATO (Militärbündnis),https://dbpedia.org/page/NATO
+entity.https://dbpedia.org/page/Norbert_Röttgen,Norbert Roettgen,Norbert Roettgen,https://dbpedia.org/page/Norbert_Röttgen
+entity.https://dbpedia.org/page/Olaf_Scholz,Olaf Scholz,Olaf Scholz,https://dbpedia.org/page/Olaf_Scholz
+entity.https://dbpedia.org/page/Photography,Bilder/Fotografie(n),Bilder/Fotografie(n),https://dbpedia.org/page/Photography
+entity.https://dbpedia.org/page/President_of_France,Französische/r Staatspräsident/in,Französische/r Staatspräsident/in,https://dbpedia.org/page/President_of_France
+entity.https://dbpedia.org/page/Russia,Russland,Russland,https://dbpedia.org/page/Russia
+entity.https://dbpedia.org/page/Russians,Russen,Russen,https://dbpedia.org/page/Russians
+entity.https://dbpedia.org/page/Saskia_Esken,Saskia Esken,Saskia Esken,https://dbpedia.org/page/Saskia_Esken
+entity.https://dbpedia.org/page/Seriousness,ernst,ernst,https://dbpedia.org/page/Seriousness
+entity.https://dbpedia.org/page/Stern_(magazine),Stern (Magazin),Stern (Magazin),https://dbpedia.org/page/Stern_(magazine)
+entity.https://dbpedia.org/page/Ukraine,Ukraine,Ukraine,https://dbpedia.org/page/Ukraine
+entity.https://dbpedia.org/page/Vladimir_Putin,Vladimir Putin,Vladimir Putin,https://dbpedia.org/page/Vladimir_Putin
+entity.https://dbpedia.org/page/World_War_III,Dritter Weltkrieg,Dritter Weltkrieg,https://dbpedia.org/page/World_War_III
+entity.https://de.wikipedia.org/wiki/Grenze_zwischen_Russland_u,russisch-ukrainische Grenze,russisch-ukrainische Grenze,https://de.wikipedia.org/wiki/Grenze_zwischen_Russland_und_der_Ukraine
+entity.https://de.wikipedia.org/wiki/Situation,Situation,Situation,https://de.wikipedia.org/wiki/Situation
+entity.https://ifkw.lmu.de/xml-dev-0-1/@DFB_Frauen, @DFB_Frauen, @DFB_Frauen,https://ifkw.lmu.de/xml-dev-0-1/@DFB_Frauen
+entity.https://ifkw.lmu.de/xml-dev-0-1/#Bundestag,#Bundestag,#Bundestag,https://ifkw.lmu.de/xml-dev-0-1/#Bundestag
+entity.https://ifkw.lmu.de/xml-dev-0-1/#Freiheit,#Freiheit,#Freiheit,https://ifkw.lmu.de/xml-dev-0-1/#Freiheit
+entity.https://ifkw.lmu.de/xml-dev-0-1/#Kiew,#Kiew,#Kiew,https://ifkw.lmu.de/xml-dev-0-1/#Kiew
+entity.https://ifkw.lmu.de/xml-dev-0-1/#Mariupol,#Mariupol,#Mariupol,https://ifkw.lmu.de/xml-dev-0-1/#Mariupol
+entity.https://ifkw.lmu.de/xml-dev-0-1/#Putin,#Putin,#Putin,https://ifkw.lmu.de/xml-dev-0-1/#Putin
+entity.https://ifkw.lmu.de/xml-dev-0-1/#Solidarität,#Solidarität,#Solidarität,https://ifkw.lmu.de/xml-dev-0-1/#Solidarität
+entity.https://ifkw.lmu.de/xml-dev-0-1/#Waffenlieferungen,#Waffenlieferungen,#Waffenlieferungen,https://ifkw.lmu.de/xml-dev-0-1/#Waffenlieferungen
+entity.https://ifkw.lmu.de/xml-dev-0-1/aktuell,aktuell,aktuell,https://ifkw.lmu.de/xml-dev-0-1/aktuell
+entity.https://ifkw.lmu.de/xml-dev-0-1/Alternative,Alternative,Alternative,https://ifkw.lmu.de/xml-dev-0-1/Alternative
+entity.https://ifkw.lmu.de/xml-dev-0-1/ängstlich,ängstlich,ängstlich,https://ifkw.lmu.de/xml-dev-0-1/ängstlich
+entity.https://ifkw.lmu.de/xml-dev-0-1/auch (ebenfalls),auch (ebenfalls),auch (ebenfalls),https://ifkw.lmu.de/xml-dev-0-1/auch (ebenfalls)
+entity.https://ifkw.lmu.de/xml-dev-0-1/Bild der Geschlossenheit,Bild der Geschlossenheit,Bild der Geschlossenheit,https://ifkw.lmu.de/xml-dev-0-1/Bild der Geschlossenheit
+entity.https://ifkw.lmu.de/xml-dev-0-1/Bündnisfähigkeit,Bündnisfähigkeit,Bündnisfähigkeit,https://ifkw.lmu.de/xml-dev-0-1/Bündnisfähigkeit
+entity.https://ifkw.lmu.de/xml-dev-0-1/das Recht des Stärkeren,das Recht des Stärkeren,das Recht des Stärkeren,https://ifkw.lmu.de/xml-dev-0-1/das Recht des Stärkeren
+entity.https://ifkw.lmu.de/xml-dev-0-1/der Situation entspreche,der Situation entsprechend,der Situation entsprechend,https://ifkw.lmu.de/xml-dev-0-1/der Situation entsprechend
+entity.https://ifkw.lmu.de/xml-dev-0-1/der/die Verteidiger,der/die Verteidiger,der/die Verteidiger,https://ifkw.lmu.de/xml-dev-0-1/der/die Verteidiger
+entity.https://ifkw.lmu.de/xml-dev-0-1/Deutsche Bündnispartner,Deutsche Bündnispartner,Deutsche Bündnispartner,https://ifkw.lmu.de/xml-dev-0-1/Deutsche Bündnispartner
+entity.https://ifkw.lmu.de/xml-dev-0-1/düster,düster,düster,https://ifkw.lmu.de/xml-dev-0-1/düster
+entity.https://ifkw.lmu.de/xml-dev-0-1/ein Zeichen setzen,ein Zeichen setzen,ein Zeichen setzen,https://ifkw.lmu.de/xml-dev-0-1/ein Zeichen setzen
+entity.https://ifkw.lmu.de/xml-dev-0-1/eindeutig/klar,eindeutig/klar,eindeutig/klar,https://ifkw.lmu.de/xml-dev-0-1/eindeutig/klar
+entity.https://ifkw.lmu.de/xml-dev-0-1/eine Rede halten,eine Rede halten,eine Rede halten,https://ifkw.lmu.de/xml-dev-0-1/eine Rede halten
+entity.https://ifkw.lmu.de/xml-dev-0-1/einen hohen Preis zahlen,einen hohen Preis zahlen,einen hohen Preis zahlen,https://ifkw.lmu.de/xml-dev-0-1/einen hohen Preis zahlen
+entity.https://ifkw.lmu.de/xml-dev-0-1/entschlossen,entschlossen,entschlossen,https://ifkw.lmu.de/xml-dev-0-1/entschlossen
+entity.https://ifkw.lmu.de/xml-dev-0-1/etwas/jmd. stärken,etwas/jmd. stärken,etwas/jmd. stärken,https://ifkw.lmu.de/xml-dev-0-1/etwas/jmd. stärken
+entity.https://ifkw.lmu.de/xml-dev-0-1/fortfahren,fortfahren,fortfahren,https://ifkw.lmu.de/xml-dev-0-1/fortfahren
+entity.https://ifkw.lmu.de/xml-dev-0-1/Fraktionsvize,Fraktionsvize,Fraktionsvize,https://ifkw.lmu.de/xml-dev-0-1/Fraktionsvize
+entity.https://ifkw.lmu.de/xml-dev-0-1/Fußball,Fußball,Fußball,https://ifkw.lmu.de/xml-dev-0-1/Fußball
+entity.https://ifkw.lmu.de/xml-dev-0-1/Gepard,Gepard,Gepard,https://ifkw.lmu.de/xml-dev-0-1/Gepard
+entity.https://ifkw.lmu.de/xml-dev-0-1/Haltung (haben),Haltung (haben),Haltung (haben),https://ifkw.lmu.de/xml-dev-0-1/Haltung (haben)
+entity.https://ifkw.lmu.de/xml-dev-0-1/Hand mit gekreuzten Fing,Hand mit gekreuzten Fingern,Hand mit gekreuzten Fingern,https://ifkw.lmu.de/xml-dev-0-1/Hand mit gekreuzten Fingern
+entity.https://ifkw.lmu.de/xml-dev-0-1/heute,heute,heute,https://ifkw.lmu.de/xml-dev-0-1/heute
+entity.https://ifkw.lmu.de/xml-dev-0-1/hochgerüstet,hochgerüstet,hochgerüstet,https://ifkw.lmu.de/xml-dev-0-1/hochgerüstet
+entity.https://ifkw.lmu.de/xml-dev-0-1/imperialistisches Großm,imperialistisches Großmachtstreben,imperialistisches Großmachtstreben,https://ifkw.lmu.de/xml-dev-0-1/imperialistisches Großmachtstreben
+entity.https://ifkw.lmu.de/xml-dev-0-1/Innerhalb der letzten Wo,Innerhalb der letzten Wochen,Innerhalb der letzten Wochen,https://ifkw.lmu.de/xml-dev-0-1/Innerhalb der letzten Wochen
+entity.https://ifkw.lmu.de/xml-dev-0-1/Jemanden/etwas stoppen,Jemanden/etwas stoppen,Jemanden/etwas stoppen,https://ifkw.lmu.de/xml-dev-0-1/Jemanden/etwas stoppen
+entity.https://ifkw.lmu.de/xml-dev-0-1/Kriegsagitator,Kriegsagitator,Kriegsagitator,https://ifkw.lmu.de/xml-dev-0-1/Kriegsagitator
+entity.https://ifkw.lmu.de/xml-dev-0-1/Kriegsende,Kriegsende,Kriegsende,https://ifkw.lmu.de/xml-dev-0-1/Kriegsende
+entity.https://ifkw.lmu.de/xml-dev-0-1/laut (sein),laut (sein),laut (sein),https://ifkw.lmu.de/xml-dev-0-1/laut (sein)
+entity.https://ifkw.lmu.de/xml-dev-0-1/Leopard,Leopard,Leopard,https://ifkw.lmu.de/xml-dev-0-1/Leopard
+entity.https://ifkw.lmu.de/xml-dev-0-1/Lieferung von Waffen an,Lieferung von Waffen an die Ukraine,Lieferung von Waffen an die Ukraine,https://ifkw.lmu.de/xml-dev-0-1/Lieferung von Waffen an die Ukraine
+entity.https://ifkw.lmu.de/xml-dev-0-1/Marder,Marder,Marder,https://ifkw.lmu.de/xml-dev-0-1/Marder
+entity.https://ifkw.lmu.de/xml-dev-0-1/mehr/häufiger/stärker,mehr/häufiger/stärker,mehr/häufiger/stärker,https://ifkw.lmu.de/xml-dev-0-1/mehr/häufiger/stärker
+entity.https://ifkw.lmu.de/xml-dev-0-1/militärische Aggression,militärische Aggressionsausweitung,militärische Aggressionsausweitung,https://ifkw.lmu.de/xml-dev-0-1/militärische Aggressionsausweitung
+entity.https://ifkw.lmu.de/xml-dev-0-1/Militärische Konfrontat,Militärische Konfrontation,Militärische Konfrontation,https://ifkw.lmu.de/xml-dev-0-1/Militärische Konfrontation
+entity.https://ifkw.lmu.de/xml-dev-0-1/Militärischer Einmarsch,Militärischer Einmarsch russischer Truppen in die Ukraine,Militärischer Einmarsch russischer Truppen in die Ukraine,https://ifkw.lmu.de/xml-dev-0-1/Militärischer Einmarsch russischer Truppen in die Ukraine
+entity.https://ifkw.lmu.de/xml-dev-0-1/militärischer Sieg,militärischer Sieg,militärischer Sieg,https://ifkw.lmu.de/xml-dev-0-1/militärischer Sieg
+entity.https://ifkw.lmu.de/xml-dev-0-1/nicht genug (sein),nicht genug (sein),nicht genug (sein),https://ifkw.lmu.de/xml-dev-0-1/nicht genug (sein)
+entity.https://ifkw.lmu.de/xml-dev-0-1/nuklear,nuklear,nuklear,https://ifkw.lmu.de/xml-dev-0-1/nuklear
+entity.https://ifkw.lmu.de/xml-dev-0-1/Qualitätsverbesserung,Qualitätsverbesserung,Qualitätsverbesserung,https://ifkw.lmu.de/xml-dev-0-1/Qualitätsverbesserung
+entity.https://ifkw.lmu.de/xml-dev-0-1/Quanitätssteigerung,Quanitätssteigerung,Quanitätssteigerung,https://ifkw.lmu.de/xml-dev-0-1/Quanitätssteigerung
+entity.https://ifkw.lmu.de/xml-dev-0-1/ruhen,ruhen,ruhen,https://ifkw.lmu.de/xml-dev-0-1/ruhen
+entity.https://ifkw.lmu.de/xml-dev-0-1/russisch-ukrainische Gre,russisch-ukrainische Grenze,russisch-ukrainische Grenze,https://ifkw.lmu.de/xml-dev-0-1/russisch-ukrainische Grenze
+entity.https://ifkw.lmu.de/xml-dev-0-1/schwere Waffen,schwere Waffen,schwere Waffen,https://ifkw.lmu.de/xml-dev-0-1/schwere Waffen
+entity.https://ifkw.lmu.de/xml-dev-0-1/sich mit etwas umtreiben,sich mit etwas umtreiben,sich mit etwas umtreiben,https://ifkw.lmu.de/xml-dev-0-1/sich mit etwas umtreiben
+entity.https://ifkw.lmu.de/xml-dev-0-1/sich wehren,sich wehren,sich wehren,https://ifkw.lmu.de/xml-dev-0-1/sich wehren
+entity.https://ifkw.lmu.de/xml-dev-0-1/Sichern,Sichern,Sichern,https://ifkw.lmu.de/xml-dev-0-1/Sichern
+entity.https://ifkw.lmu.de/xml-dev-0-1/Sieg über die Stärke d,Sieg über die Stärke des Rechts,Sieg über die Stärke des Rechts,https://ifkw.lmu.de/xml-dev-0-1/Sieg über die Stärke des Rechts
+entity.https://ifkw.lmu.de/xml-dev-0-1/Situation,Situation,Situation,https://ifkw.lmu.de/xml-dev-0-1/Situation
+entity.https://ifkw.lmu.de/xml-dev-0-1/täglich,täglich,täglich,https://ifkw.lmu.de/xml-dev-0-1/täglich
+entity.https://ifkw.lmu.de/xml-dev-0-1/tapfer,tapfer,tapfer,https://ifkw.lmu.de/xml-dev-0-1/tapfer
+entity.https://ifkw.lmu.de/xml-dev-0-1/Tatsachenverdrehung,Tatsachenverdrehung,Tatsachenverdrehung,https://ifkw.lmu.de/xml-dev-0-1/Tatsachenverdrehung
+entity.https://ifkw.lmu.de/xml-dev-0-1/Treffen,Treffen,Treffen,https://ifkw.lmu.de/xml-dev-0-1/Treffen
+entity.https://ifkw.lmu.de/xml-dev-0-1/unbesonnenes Handeln,unbesonnenes Handeln,unbesonnenes Handeln,https://ifkw.lmu.de/xml-dev-0-1/unbesonnenes Handeln
+entity.https://ifkw.lmu.de/xml-dev-0-1/unerschütterlich/fest,unerschütterlich/fest,unerschütterlich/fest,https://ifkw.lmu.de/xml-dev-0-1/unerschütterlich/fest
+entity.https://ifkw.lmu.de/xml-dev-0-1/unkalkulierbar,unkalkulierbar,unkalkulierbar,https://ifkw.lmu.de/xml-dev-0-1/unkalkulierbar
+entity.https://ifkw.lmu.de/xml-dev-0-1/Unterstützung,Unterstützung,Unterstützung,https://ifkw.lmu.de/xml-dev-0-1/Unterstützung
+entity.https://ifkw.lmu.de/xml-dev-0-1/unverantwortlich,unverantwortlich,unverantwortlich,https://ifkw.lmu.de/xml-dev-0-1/unverantwortlich
+entity.https://ifkw.lmu.de/xml-dev-0-1/vergangene(s/n) Jahr(e),vergangene(s/n) Jahr(e),vergangene(s/n) Jahr(e),https://ifkw.lmu.de/xml-dev-0-1/vergangene(s/n) Jahr(e)
+entity.https://ifkw.lmu.de/xml-dev-0-1/vergessen,vergessen,vergessen,https://ifkw.lmu.de/xml-dev-0-1/vergessen
+entity.https://ifkw.lmu.de/xml-dev-0-1/Verhinderung der Ausbrei,Verhinderung der Ausbreitung eines Flächenbrands,Verhinderung der Ausbreitung eines Flächenbrands,https://ifkw.lmu.de/xml-dev-0-1/Verhinderung der Ausbreitung eines Flächenbrands
+entity.https://ifkw.lmu.de/xml-dev-0-1/Verteidigungsfähigkeit,Verteidigungsfähigkeit,Verteidigungsfähigkeit,https://ifkw.lmu.de/xml-dev-0-1/Verteidigungsfähigkeit
+entity.https://ifkw.lmu.de/xml-dev-0-1/viele Menschen,viele Menschen,viele Menschen,https://ifkw.lmu.de/xml-dev-0-1/viele Menschen
+entity.https://ifkw.lmu.de/xml-dev-0-1/völkerrechtswidrig,völkerrechtswidrig,völkerrechtswidrig,https://ifkw.lmu.de/xml-dev-0-1/völkerrechtswidrig
+entity.https://ifkw.lmu.de/xml-dev-0-1/vor 61 Jahren,vor 61 Jahren,vor 61 Jahren,https://ifkw.lmu.de/xml-dev-0-1/vor 61 Jahren
+entity.https://ifkw.lmu.de/xml-dev-0-1/We stand with Ukraine,We stand with Ukraine,We stand with Ukraine,https://ifkw.lmu.de/xml-dev-0-1/We stand with Ukraine
+entity.https://ifkw.lmu.de/xml-dev-0-1/weitere Länder,weitere Länder,weitere Länder,https://ifkw.lmu.de/xml-dev-0-1/weitere Länder
+entity.https://ifkw.lmu.de/xml-dev-0-1/wichtig,wichtig,wichtig,https://ifkw.lmu.de/xml-dev-0-1/wichtig
+entity.https://ifkw.lmu.de/xml-dev-0-1/wildgeworden,wildgeworden,wildgeworden,https://ifkw.lmu.de/xml-dev-0-1/wildgeworden
+entity.https://ifkw.lmu.de/xml-dev-0-1/wissen was man will,wissen was man will,wissen was man will,https://ifkw.lmu.de/xml-dev-0-1/wissen was man will
+entity.https://ifkw.lmu.de/xml-dev-0-1/wochenlang,wochenlang,wochenlang,https://ifkw.lmu.de/xml-dev-0-1/wochenlang
+entity.https://ifkw.lmu.de/xml-dev-0-1/Zögerlichkeit,Zögerlichkeit,Zögerlichkeit,https://ifkw.lmu.de/xml-dev-0-1/Zögerlichkeit
+entity.https://ifkw.lmu.de/xml-dev-0-1/zu Ende sein,zu Ende sein,zu Ende sein,https://ifkw.lmu.de/xml-dev-0-1/zu Ende sein
+entity.https://www.wikidata.org/wiki/Q100913897,Frauen Fußball EM 2022,Frauen Fußball EM 2022,https://www.wikidata.org/wiki/Q100913897
+entity.https://www.wikidata.org/wiki/Q102186689,Schwäche,Schwäche,https://www.wikidata.org/wiki/Q102186689
+entity.https://www.wikidata.org/wiki/Q1023134,CDU/CSU Bundestagsfraktion,CDU/CSU Bundestagsfraktion,https://www.wikidata.org/wiki/Q1023134
+entity.https://www.wikidata.org/wiki/Q1037363,unterlassene Hilfe(leistung),unterlassene Hilfe(leistung),https://www.wikidata.org/wiki/Q1037363
+entity.https://www.wikidata.org/wiki/Q104717411,Facebook-Post,Facebook-Post,https://www.wikidata.org/wiki/Q104717411
+entity.https://www.wikidata.org/wiki/Q105766445,überfällig,überfällig,https://www.wikidata.org/wiki/Q105766445
+entity.https://www.wikidata.org/wiki/Q105766481,Einschränkung,Einschränkung,https://www.wikidata.org/wiki/Q105766481
+entity.https://www.wikidata.org/wiki/Q107490377,leichtfertig,leichtfertig,https://www.wikidata.org/wiki/Q107490377
+entity.https://www.wikidata.org/wiki/Q108529701,Mauerbau (DDR),Mauerbau (DDR),https://www.wikidata.org/wiki/Q108529701
+entity.https://www.wikidata.org/wiki/Q110999040,Beginn des Angriffskrieges auf die Ukraine am 24.2.2022,Beginn des Angriffskrieges auf die Ukraine am 24.2.2022,https://www.wikidata.org/wiki/Q110999040
+entity.https://www.wikidata.org/wiki/Q113355933,Finale der Frauen Fußball EM 2022,Finale der Frauen Fußball EM 2022,https://www.wikidata.org/wiki/Q113355933
+entity.https://www.wikidata.org/wiki/Q1136816,Gewöhnen,Gewöhnen,https://www.wikidata.org/wiki/Q1136816
+entity.https://www.wikidata.org/wiki/Q1160121,Kettenreaktion,Kettenreaktion,https://www.wikidata.org/wiki/Q1160121
+entity.https://www.wikidata.org/wiki/Q1184840,Militärfahrzeug,Militärfahrzeug,https://www.wikidata.org/wiki/Q1184840
+entity.https://www.wikidata.org/wiki/Q12327327,Danish Ministry of Health,Danish Ministry of Health,https://www.wikidata.org/wiki/Q12327327
+entity.https://www.wikidata.org/wiki/Q1241480,Hängepartie,Hängepartie,https://www.wikidata.org/wiki/Q1241480
+entity.https://www.wikidata.org/wiki/Q134313,barbarisch,barbarisch,https://www.wikidata.org/wiki/Q134313
+entity.https://www.wikidata.org/wiki/Q1345380,Entschließungsantrag,Entschließungsantrag,https://www.wikidata.org/wiki/Q1345380
+entity.https://www.wikidata.org/wiki/Q135984,ZDF-Morgenmagazin,ZDF-Morgenmagazin,https://www.wikidata.org/wiki/Q135984
+entity.https://www.wikidata.org/wiki/Q1361229,Eroberung,Eroberung,https://www.wikidata.org/wiki/Q1361229
+entity.https://www.wikidata.org/wiki/Q1406816,Leitlinie(n),Leitlinie(n),https://www.wikidata.org/wiki/Q1406816
+entity.https://www.wikidata.org/wiki/Q1425577,Versprechen,Versprechen,https://www.wikidata.org/wiki/Q1425577
+entity.https://www.wikidata.org/wiki/Q146858,Wembley,Wembley,https://www.wikidata.org/wiki/Q146858
+entity.https://www.wikidata.org/wiki/Q15275192,politische Initiative (Vorstoß),politische Initiative (Vorstoß),https://www.wikidata.org/wiki/Q15275192
+entity.https://www.wikidata.org/wiki/Q154408,Deutsche Frauen Fußballnationalmannschaft,Deutsche Frauen Fußballnationalmannschaft,https://www.wikidata.org/wiki/Q154408
+entity.https://www.wikidata.org/wiki/Q15836815,niemand,niemand,https://www.wikidata.org/wiki/Q15836815
+entity.https://www.wikidata.org/wiki/Q15860072,Russland-Ukraine-Konflikt,Russland-Ukraine-Konflikt,https://www.wikidata.org/wiki/Q15860072
+entity.https://www.wikidata.org/wiki/Q159,Russische Regierung,Russische Regierung,https://www.wikidata.org/wiki/Q159
+entity.https://www.wikidata.org/wiki/Q1591638,Kriegspartei,Kriegspartei,https://www.wikidata.org/wiki/Q1591638
+entity.https://www.wikidata.org/wiki/Q16513426,Entscheidung (treffen),Entscheidung (treffen),https://www.wikidata.org/wiki/Q16513426
+entity.https://www.wikidata.org/wiki/Q16831523,Gebot,Gebot,https://www.wikidata.org/wiki/Q16831523
+entity.https://www.wikidata.org/wiki/Q1758159,Agenda,Agenda,https://www.wikidata.org/wiki/Q1758159
+entity.https://www.wikidata.org/wiki/Q178354,Gebot,Gebot,https://www.wikidata.org/wiki/Q178354
+entity.https://www.wikidata.org/wiki/Q1793204,(auf) Kurs (sein),(auf) Kurs (sein),https://www.wikidata.org/wiki/Q1793204
+entity.https://www.wikidata.org/wiki/Q179875,Debatte,Debatte,https://www.wikidata.org/wiki/Q179875
+entity.https://www.wikidata.org/wiki/Q1889,Diplomatie,Diplomatie,https://www.wikidata.org/wiki/Q1889
+entity.https://www.wikidata.org/wiki/Q189062,Nuklearmacht,Nuklearmacht,https://www.wikidata.org/wiki/Q189062
+entity.https://www.wikidata.org/wiki/Q189756,Frage,Frage,https://www.wikidata.org/wiki/Q189756
+entity.https://www.wikidata.org/wiki/Q1898733,Mario Czaja,Mario Czaja,https://www.wikidata.org/wiki/Q1898733
+entity.https://www.wikidata.org/wiki/Q1899,Kiew (Hauptstadt),Kiew (Hauptstadt),https://www.wikidata.org/wiki/Q1899
+entity.https://www.wikidata.org/wiki/Q1914407,Maybrit Illner (Talkshow),Maybrit Illner (Talkshow),https://www.wikidata.org/wiki/Q1914407
+entity.https://www.wikidata.org/wiki/Q191797,Aggression,Aggression,https://www.wikidata.org/wiki/Q191797
+entity.https://www.wikidata.org/wiki/Q1920566,Antwort,Antwort,https://www.wikidata.org/wiki/Q1920566
+entity.https://www.wikidata.org/wiki/Q1939555,Bundestagsabgeordneter,Bundestagsabgeordneter,https://www.wikidata.org/wiki/Q1939555
+entity.https://www.wikidata.org/wiki/Q198,Krieg,Krieg,https://www.wikidata.org/wiki/Q198
+entity.https://www.wikidata.org/wiki/Q1985622,Verteidigung,Verteidigung,https://www.wikidata.org/wiki/Q1985622
+entity.https://www.wikidata.org/wiki/Q2001676,militärisches Attackieren/Angreifen,militärisches Attackieren/Angreifen,https://www.wikidata.org/wiki/Q2001676
+entity.https://www.wikidata.org/wiki/Q2069494,Stahlwerk,Stahlwerk,https://www.wikidata.org/wiki/Q2069494
+entity.https://www.wikidata.org/wiki/Q212,#Ukraine,#Ukraine,https://www.wikidata.org/wiki/Q212
+entity.https://www.wikidata.org/wiki/Q2137739,Regierungserklärung,Regierungserklärung,https://www.wikidata.org/wiki/Q2137739
+entity.https://www.wikidata.org/wiki/Q234460,Text (Inhalt),Text (Inhalt),https://www.wikidata.org/wiki/Q234460
+entity.https://www.wikidata.org/wiki/Q243968,Freiheit,Freiheit,https://www.wikidata.org/wiki/Q243968
+entity.https://www.wikidata.org/wiki/Q2534669,Vorwand,Vorwand,https://www.wikidata.org/wiki/Q2534669
+entity.https://www.wikidata.org/wiki/Q2658266,russisch-ukrainische Grenze,russisch-ukrainische Grenze,https://www.wikidata.org/wiki/Q2658266
+entity.https://www.wikidata.org/wiki/Q27468,Osteuropa,Osteuropa,https://www.wikidata.org/wiki/Q27468
+entity.https://www.wikidata.org/wiki/Q29485,falsch (sein),falsch (sein),https://www.wikidata.org/wiki/Q29485
+entity.https://www.wikidata.org/wiki/Q30230067,möglich,möglich,https://www.wikidata.org/wiki/Q30230067
+entity.https://www.wikidata.org/wiki/Q32098,Sanktion(en),Sanktion(en),https://www.wikidata.org/wiki/Q32098
+entity.https://www.wikidata.org/wiki/Q336341,Abwägung,Abwägung,https://www.wikidata.org/wiki/Q336341
+entity.https://www.wikidata.org/wiki/Q344,Zukunft,Zukunft,https://www.wikidata.org/wiki/Q344
+entity.https://www.wikidata.org/wiki/Q3960,Australia,Australia,https://www.wikidata.org/wiki/Q3960
+entity.https://www.wikidata.org/wiki/Q42008,Souveränität,Souveränität,https://www.wikidata.org/wiki/Q42008
+entity.https://www.wikidata.org/wiki/Q42519,grau (Farbe),grau (Farbe),https://www.wikidata.org/wiki/Q42519
+entity.https://www.wikidata.org/wiki/Q44806,Ukrainisches Volk,Ukrainisches Volk,https://www.wikidata.org/wiki/Q44806
+entity.https://www.wikidata.org/wiki/Q452237,(parlamentarischer) Antrag,(parlamentarischer) Antrag,https://www.wikidata.org/wiki/Q452237
+entity.https://www.wikidata.org/wiki/Q454,Frieden,Frieden,https://www.wikidata.org/wiki/Q454
+entity.https://www.wikidata.org/wiki/Q46,Europa,Europa,https://www.wikidata.org/wiki/Q46
+entity.https://www.wikidata.org/wiki/Q4692287,Aggressor,Aggressor,https://www.wikidata.org/wiki/Q4692287
+entity.https://www.wikidata.org/wiki/Q474138,Angriffskrieg,Angriffskrieg,https://www.wikidata.org/wiki/Q474138
+entity.https://www.wikidata.org/wiki/Q474328,Behauptung,Behauptung,https://www.wikidata.org/wiki/Q474328
+entity.https://www.wikidata.org/wiki/Q4830036,furchtbar/schrecklich,furchtbar/schrecklich,https://www.wikidata.org/wiki/Q4830036
+entity.https://www.wikidata.org/wiki/Q48349,Imperium,Imperium,https://www.wikidata.org/wiki/Q48349
+entity.https://www.wikidata.org/wiki/Q48352,Staatsoberhaupt,Staatsoberhaupt,https://www.wikidata.org/wiki/Q48352
+entity.https://www.wikidata.org/wiki/Q49766,Partei Bündnis90/Die Grünen,Partei Bündnis90/Die Grünen,https://www.wikidata.org/wiki/Q49766
+entity.https://www.wikidata.org/wiki/Q49768,Sozialdemokratische Partei Deutschlands,Sozialdemokratische Partei Deutschlands,https://www.wikidata.org/wiki/Q49768
+entity.https://www.wikidata.org/wiki/Q5086,Berliner Mauer,Berliner Mauer,https://www.wikidata.org/wiki/Q5086
+entity.https://www.wikidata.org/wiki/Q56010,Bundeswehr,Bundeswehr,https://www.wikidata.org/wiki/Q56010
+entity.https://www.wikidata.org/wiki/Q56119332,Tweet,Tweet,https://www.wikidata.org/wiki/Q56119332
+entity.https://www.wikidata.org/wiki/Q56210320,moralische Pflicht,moralische Pflicht,https://www.wikidata.org/wiki/Q56210320
+entity.https://www.wikidata.org/wiki/Q56296532,grotesk,grotesk,https://www.wikidata.org/wiki/Q56296532
+entity.https://www.wikidata.org/wiki/Q56450033,Völkerrecht,Völkerrecht,https://www.wikidata.org/wiki/Q56450033
+entity.https://www.wikidata.org/wiki/Q56863190,Christine Stabell Benn,Christine Stabell Benn,https://www.wikidata.org/wiki/Q56863190
+entity.https://www.wikidata.org/wiki/Q5812,Novak Djokovic,Novak Djokovic,https://www.wikidata.org/wiki/Q5812
+entity.https://www.wikidata.org/wiki/Q5919191,militärische Intervention,militärische Intervention,https://www.wikidata.org/wiki/Q5919191
+entity.https://www.wikidata.org/wiki/Q600807,fingers crossed,fingers crossed,https://www.wikidata.org/wiki/Q600807
+entity.https://www.wikidata.org/wiki/Q620737,Appeasement,Appeasement,https://www.wikidata.org/wiki/Q620737
+entity.https://www.wikidata.org/wiki/Q644302,Motivation,Motivation,https://www.wikidata.org/wiki/Q644302
+entity.https://www.wikidata.org/wiki/Q669057,Punkt,Punkt,https://www.wikidata.org/wiki/Q669057
+entity.https://www.wikidata.org/wiki/Q7174,Demokratie,Demokratie,https://www.wikidata.org/wiki/Q7174
+entity.https://www.wikidata.org/wiki/Q7390,Ruf(e),Ruf(e),https://www.wikidata.org/wiki/Q7390
+entity.https://www.wikidata.org/wiki/Q778301,Ausdehnung,Ausdehnung,https://www.wikidata.org/wiki/Q778301
+entity.https://www.wikidata.org/wiki/Q830031,besonnen,besonnen,https://www.wikidata.org/wiki/Q830031
+entity.https://www.wikidata.org/wiki/Q928764,Fraktionschef,Fraktionschef,https://www.wikidata.org/wiki/Q928764
+entity.https://www.wikidata.org/wiki/Q9362385,den Daumen drücken,den Daumen drücken,https://www.wikidata.org/wiki/Q9362385
+entity.stc://base-0-4/Author,Author,Verfasser:in,stc://base-0-4/Author
+entity.stc://base-0-4/PassiveEntity,PassiveEntity,Passiv-Entität,stc://base-0-4/PassiveEntity
+entity.stc://base-0-4/PastContext,PastContext,Vergangenheit,stc://base-0-4/PastContext
+entity.stc://base-0-4/SomeActingEntity,SomeActingEntity,Akteur,stc://base-0-4/SomeActingEntity
+entity.stc://base-0-4/SomePerson,SomePerson,Personen,stc://base-0-4/SomePerson
+entity.stc://base-0-4/unspecific Quantity,unspecific Quantity,unspezifischer Anteil,stc://base-0-4/unspecific Quantity
+entity.stc://media-0-4/ActivityPolitical,ActivityPolitical,Politische Aktivität,stc://media-0-4/ActivityPolitical
+entity.stc://media-0-4/Citizens,Citizens,Die Bürger,stc://media-0-4/Citizens
+entity.stc://media-0-4/Criminals,Criminals,Kriminelle,stc://media-0-4/Criminals
+entity.stc://media-0-4/de-escalation,de-escalation,Deeskalation,stc://media-0-4/de-escalation
+entity.stc://media-0-4/escalation,escalation,Eskalation,stc://media-0-4/escalation
+entity.stc://media-0-4/Government,Government,Die Regierung,stc://media-0-4/Government
+entity.stc://media-0-4/Inhabitants,Inhabitants,Die Einwohner,stc://media-0-4/Inhabitants
+entity.stc://media-0-4/internal dispute,internal dispute,interner Streit,stc://media-0-4/internal dispute
+entity.stc://media-0-4/Opposition,Opposition,Die Opposition,stc://media-0-4/Opposition
+entity.stc://media-0-4/pending decision,pending decision,ausstehende Entscheidung,stc://media-0-4/pending decision
+entity.stc://media-0-4/QuantityFifth,QuantityFifth,ein Fünftel,stc://media-0-4/QuantityFifth
+entity.stc://media-0-4/QuantityFourth,QuantityFourth,ein Viertel,stc://media-0-4/QuantityFourth
+entity.stc://media-0-4/QuantityHalf,QuantityHalf,die Hälfte,stc://media-0-4/QuantityHalf
+entity.stc://media-0-4/QuantityMajority,QuantityMajority,eine Mehrheit,stc://media-0-4/QuantityMajority
+entity.stc://media-0-4/QuantityMinority,QuantityMinority,eine Minderheit,stc://media-0-4/QuantityMinority
+entity.stc://media-0-4/QuantityNarrowMajority,QuantityNarrowMajority,eine knappe Mehrheit,stc://media-0-4/QuantityNarrowMajority
+entity.stc://media-0-4/QuantityThird,QuantityThird,ein Dritte,stc://media-0-4/QuantityThird
+entity.stc://media-0-4/SchemePendingDecision,SchemePendingDecision,,stc://media-0-4/SchemePendingDecision
+entity.stc://media-0-4/TheMedia,TheMedia,Die Medien,stc://media-0-4/TheMedia
+entity.stc://media-0-4/ThePolitics,ThePolitics,Die Politik,stc://media-0-4/ThePolitics
+entity.stc://media-0-4/ThePublic,ThePublic,Die Öffentlichkeit,stc://media-0-4/ThePublic
+entity.stc://media-0-4/TheSocialMedia,TheSocialMedia,Die soziale Medien,stc://media-0-4/TheSocialMedia
+entity.stc://media-0-4/TimeLastDay,TimeLastDay,Gestern,stc://media-0-4/TimeLastDay
+entity.stc://media-0-4/TimeLastNight,TimeLastNight,Vergangene Nacht,stc://media-0-4/TimeLastNight
+operator.https://ifkw.lmu.de/xml-dev-0-1/benötigt nicht,benötigt nicht,benötigt nicht,https://ifkw.lmu.de/xml-dev-0-1/benötigt nicht
+operator.https://ifkw.lmu.de/xml-dev-0-1/darf nicht,darf nicht,darf nicht,https://ifkw.lmu.de/xml-dev-0-1/darf nicht
+operator.https://ifkw.lmu.de/xml-dev-0-1/führt nicht zu,führt nicht zu,führt nicht zu,https://ifkw.lmu.de/xml-dev-0-1/führt nicht zu
+operator.https://ifkw.lmu.de/xml-dev-0-1/ist keine Ursache für,ist keine Ursache für,ist keine Ursache für,https://ifkw.lmu.de/xml-dev-0-1/ist keine Ursache für
+operator.https://ifkw.lmu.de/xml-dev-0-1/ist Ursache für,ist Ursache für,ist Ursache für,https://ifkw.lmu.de/xml-dev-0-1/ist Ursache für
+operator.https://ifkw.lmu.de/xml-dev-0-1/ist/sind nicht,ist/sind nicht,ist/sind nicht,https://ifkw.lmu.de/xml-dev-0-1/ist/sind nicht
+operator.https://ifkw.lmu.de/xml-dev-0-1/testet,testet,testet,https://ifkw.lmu.de/xml-dev-0-1/testet
+operator.https://ifkw.lmu.de/xml-dev-0-1/vermittelt Gefühl,vermittelt Gefühl,vermittelt Gefühl,https://ifkw.lmu.de/xml-dev-0-1/vermittelt Gefühl
+operator.https://ifkw.lmu.de/xml-dev-0-1/verwendet Emoji,verwendet Emoji,verwendet Emoji,https://ifkw.lmu.de/xml-dev-0-1/verwendet Emoji
+operator.https://www.openthesaurus.de/synonyme/%28eine%29%20Red,eine Rede halten,eine Rede halten,https://www.openthesaurus.de/synonyme/%28eine%29%20Rede%20halten
+operator.https://www.openthesaurus.de/synonyme/absprechen,absprechen,absprechen,https://www.openthesaurus.de/synonyme/absprechen
+operator.https://www.openthesaurus.de/synonyme/beantragen,beantragen,beantragen,https://www.openthesaurus.de/synonyme/beantragen
+operator.https://www.openthesaurus.de/synonyme/bedrohen,bedrohen,bedrohen,https://www.openthesaurus.de/synonyme/bedrohen
+operator.https://www.openthesaurus.de/synonyme/bedroht%20sein,bedroht sein/werden,bedroht sein/werden,https://www.openthesaurus.de/synonyme/bedroht%20sein
+operator.https://www.openthesaurus.de/synonyme/beenden,beenden,beenden,https://www.openthesaurus.de/synonyme/beenden
+operator.https://www.openthesaurus.de/synonyme/benötigen,benötigt,benötigt,https://www.openthesaurus.de/synonyme/benötigen
+operator.https://www.openthesaurus.de/synonyme/besitzen,besitzt,besitzt,https://www.openthesaurus.de/synonyme/besitzen
+operator.https://www.openthesaurus.de/synonyme/deutlich+machen,deutlich machen,deutlich machen,https://www.openthesaurus.de/synonyme/deutlich+machen
+operator.https://www.openthesaurus.de/synonyme/durchgehen%20las,jemandem etwas durchgehen lassen,jemandem etwas durchgehen lassen,https://www.openthesaurus.de/synonyme/durchgehen%20lassen
+operator.https://www.openthesaurus.de/synonyme/enthalten,enthält/enthalten,enthält/enthalten,https://www.openthesaurus.de/synonyme/enthalten
+operator.https://www.openthesaurus.de/synonyme/erfordern,erfordert/erfordern,erfordert/erfordern,https://www.openthesaurus.de/synonyme/erfordern
+operator.https://www.openthesaurus.de/synonyme/etwas+tun+müsse,etwas tun müssen,etwas tun müssen,https://www.openthesaurus.de/synonyme/etwas+tun+müssen
+operator.https://www.openthesaurus.de/synonyme/festhalten,festhalten (an),festhalten (an),https://www.openthesaurus.de/synonyme/festhalten
+operator.https://www.openthesaurus.de/synonyme/führen,(an)führen,(an)führen,https://www.openthesaurus.de/synonyme/führen
+operator.https://www.openthesaurus.de/synonyme/für%20richtig%2,(etwas) für richtig halten,(etwas) für richtig halten,https://www.openthesaurus.de/synonyme/für%20richtig%20halten
+operator.https://www.openthesaurus.de/synonyme/handeln,handeln,handeln,https://www.openthesaurus.de/synonyme/handeln
+operator.https://www.openthesaurus.de/synonyme/kein+Interesse,hat kein Interesse,hat kein Interesse,https://www.openthesaurus.de/synonyme/kein+Interesse
+operator.https://www.openthesaurus.de/synonyme/nicht%20tun,(etwas) nicht tun/machen,(etwas) nicht tun/machen,https://www.openthesaurus.de/synonyme/nicht%20tun
+operator.https://www.openthesaurus.de/synonyme/Recht%20auf,ein Recht auf etwas haben,ein Recht auf etwas haben,https://www.openthesaurus.de/synonyme/Recht%20auf
+operator.https://www.openthesaurus.de/synonyme/reisen,reisen,reisen,https://www.openthesaurus.de/synonyme/reisen
+operator.https://www.openthesaurus.de/synonyme/soll,soll(en),soll(en),https://www.openthesaurus.de/synonyme/soll
+operator.https://www.openthesaurus.de/synonyme/unterstützen,unterstützen,unterstützen,https://www.openthesaurus.de/synonyme/unterstützen
+operator.https://www.openthesaurus.de/synonyme/verhindern,verhindern,verhindern,https://www.openthesaurus.de/synonyme/verhindern
+operator.https://www.openthesaurus.de/synonyme/verschärfen,verschärfen,verschärfen,https://www.openthesaurus.de/synonyme/verschärfen
+operator.https://www.openthesaurus.de/synonyme/wenn%20nicht,wenn nicht,wenn nicht,https://www.openthesaurus.de/synonyme/wenn%20nicht
+operator.https://www.openthesaurus.de/synonyme/wissen,wissen,wissen,https://www.openthesaurus.de/synonyme/wissen
+operator.https://www.openthesaurus.de/synonyme/zeigen,zeigt/en,zeigt/en,https://www.openthesaurus.de/synonyme/zeigen
+operator.https://www.openthesaurus.de/synonyme/zur%20Seite%20st,(jmd.) zur Seite stehen,(jmd.) zur Seite stehen,https://www.openthesaurus.de/synonyme/zur%20Seite%20stehen
+operator.stc://base-0-4/and,and,und,stc://base-0-4/and
+operator.stc://base-0-4/assign context,assign context,ordnet zu,stc://base-0-4/assign context
+operator.stc://base-0-4/assign spacial,assign spacial,örtliche Zuordnung,stc://base-0-4/assign spacial
+operator.stc://base-0-4/assign temporal,assign temporal,zeitliche Zuordnung,stc://base-0-4/assign temporal
+operator.stc://base-0-4/assign topic,assign topic,gehört zu,stc://base-0-4/assign topic
+operator.stc://base-0-4/causes,causes,führt zu,stc://base-0-4/causes
+operator.stc://base-0-4/corresponds to,corresponds to,entspricht,stc://base-0-4/corresponds to
+operator.stc://base-0-4/does,does,macht,stc://base-0-4/does
+operator.stc://base-0-4/expresses opinion,expresses opinion,meint,stc://base-0-4/expresses opinion
+operator.stc://base-0-4/identical,identical,identisch,stc://base-0-4/identical
+operator.stc://base-0-4/important for,important for,wichtig für,stc://base-0-4/important for
+operator.stc://base-0-4/in schema,in schema,folgt dem Schema,stc://base-0-4/in schema
+operator.stc://base-0-4/is,is,hat die Eigenschaft,stc://base-0-4/is
+operator.stc://base-0-4/is a,is a,ist ein/e,stc://base-0-4/is a
+operator.stc://base-0-4/is condition for,is condition for,ist Bedingung für,stc://base-0-4/is condition for
+operator.stc://base-0-4/is part of,is part of,ist Teil von,stc://base-0-4/is part of
+operator.stc://base-0-4/locate in time,locate in time,zeitliche Zuordnung,stc://base-0-4/locate in time
+operator.stc://base-0-4/plans,plans,plant,stc://base-0-4/plans
+operator.stc://base-0-4/share,share,Anteil,stc://base-0-4/share
+operator.stc://base-0-4/share qualitative,share qualitative,Anteil qualitativ,stc://base-0-4/share qualitative
+operator.stc://base-0-4/share quantitative,share quantitative,Anteil quantitativ,stc://base-0-4/share quantitative
+operator.stc://base-0-4/simultaneously,simultaneously,zugleich,stc://base-0-4/simultaneously
+operator.stc://base-0-4/specifies,specifies,spezifiziert durch,stc://base-0-4/specifies
+operator.stc://base-0-4/tries,tries,versucht,stc://base-0-4/tries
+operator.stc://base-0-4/wants,wants,will,stc://base-0-4/wants
+operator.stc://base-0-4/wants not,wants not,will nicht,stc://base-0-4/wants not
+operator.stc://media-0-4/build,build,baut,stc://media-0-4/build
+operator.stc://media-0-4/claim political,claim political,fordert (politisch),stc://media-0-4/claim political
+operator.stc://media-0-4/enforce,enforce,erzwingen,stc://media-0-4/enforce
+operator.stc://media-0-4/is ascribed the schema,is ascribed the schema,wird zugeschrieben das Schema,stc://media-0-4/is ascribed the schema
+operator.stc://media-0-4/learn,learn,lernt,stc://media-0-4/learn
+operator.stc://media-0-4/meet,meet,trifft,stc://media-0-4/meet
+operator.stc://media-0-4/meet political,meet political,trifft (politisch),stc://media-0-4/meet political
+operator.stc://media-0-4/organize,organize,organisiert,stc://media-0-4/organize
+operator.stc://media-0-4/pass a law,pass a law,beschließt,stc://media-0-4/pass a law
+operator.stc://media-0-4/report about,report about,berichtet über,stc://media-0-4/report about
+operator.stc://media-0-4/threaten,threaten,droht,stc://media-0-4/threaten
+operator.stc://media-0-4/vote for,vote for,stimmen für,stc://media-0-4/vote for
+operator.stc://media-0-4/warn about,warn about,warnt vor,stc://media-0-4/warn about
+setup.namespace,https://ifkw.lmu.de/xml-dev-0-1,,
+setup.title,Probekodierung 2021/22,,

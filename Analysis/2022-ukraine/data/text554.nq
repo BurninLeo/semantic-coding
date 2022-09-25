@@ -1,0 +1,56 @@
+<https://www.wikidata.org/wiki/Q452237> <stc://base-0-4/assign context> <https://ifkw.lmu.de/xml-dev-0-1/Lieferung von Waffen an die Ukraine> _:rel1 .
+_:rel1 <http://purl.org/dc/terms/title> "(parlamentarischer) Antrag zur Lieferung von Waffen an die Ukraine"  .
+_:rel1 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://ifkw.lmu.de/xml-dev-0-1/#Freiheit> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q27468> _:rel10 .
+_:rel10 <http://purl.org/dc/terms/title> "Freiheit in Osteuropa"  .
+<https://ifkw.lmu.de/xml-dev-0-1/der/die Verteidiger> <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/tapfer> _:rel11 .
+_:rel11 <http://purl.org/dc/terms/title> "tapfere Verteidiger"  .
+<https://www.wikidata.org/wiki/Q1985622> <stc://base-0-4/assign context> _:rel10 _:rel12 .
+_:rel12 <http://purl.org/dc/terms/title> "Verteidigung der Freihheit in Osteuropa"  .
+_:rel11 <stc://base-0-4/does> _:rel12 _:rel13 .
+_:rel13 <http://purl.org/dc/terms/title> "die tapferen Verteidiger verteidigen die Freiheit in Osteuropa"  .
+<https://www.wikidata.org/wiki/Q44806> <stc://base-0-4/is part of> _:rel11 _:rel14 .
+_:rel14 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+_:rel8 <stc://base-0-4/assign context> _:rel13 _:rel15 .
+_:rel15 <http://purl.org/dc/terms/title> "ein Zeichen für Solidarität setzen mit den tapferen Verteidigern der Freiheit in Osteuropa"  .
+_:rel15 <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/wichtig>  .
+_:rel15 <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q105766445>  .
+<https://dbpedia.org/page/Germany> <https://www.openthesaurus.de/synonyme/zur%20Seite%20stehen> <https://dbpedia.org/page/Ukraine> _:rel18 .
+_:rel18 <http://purl.org/dc/terms/title> "Deutschland steht der Ukraine zur Seite"  .
+<https://www.wikidata.org/wiki/Q212> <stc://base-0-4/assign context> <https://dbpedia.org/page/Ukraine> _:rel19 .
+_:rel19 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+_:rel1 <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q212>  .
+_:rel18 <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/unerschütterlich/fest>  .
+<https://dbpedia.org/page/Friedrich_Merz> <stc://base-0-4/does> <https://ifkw.lmu.de/xml-dev-0-1/eine Rede halten> _:rel21 .
+_:rel21 <http://purl.org/dc/terms/title> "Friedrich Merz hält eine Rede"  .
+_:rel21 <stc://base-0-4/assign spacial> <https://ifkw.lmu.de/xml-dev-0-1/#Bundestag>  .
+<https://ifkw.lmu.de/xml-dev-0-1/#Bundestag> <stc://base-0-4/assign context> <https://dbpedia.org/page/Bundestag> _:rel23 .
+_:rel23 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://www.wikidata.org/wiki/Q15836815> <stc://base-0-4/assign context> <https://dbpedia.org/page/Bundestag> _:rel24 .
+_:rel24 <http://purl.org/dc/terms/title> "niemand im Deutschen Bundestag"  .
+_:rel24 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://www.wikidata.org/wiki/Q5919191> <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q107490377> _:rel25 .
+_:rel25 <http://purl.org/dc/terms/title> "leichtfertige militärische Intervention"  .
+_:rel25 <stc://base-0-4/assign spacial> <https://dbpedia.org/page/Ukraine> _:rel26 .
+_:rel26 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+_:rel24 <stc://media-0-4/vote for> _:rel25  .
+<https://www.wikidata.org/wiki/Q2069494> <stc://base-0-4/assign spacial> <https://ifkw.lmu.de/xml-dev-0-1/#Mariupol> _:rel28 .
+_:rel28 <http://purl.org/dc/terms/title> "Stahlwerk in Mariupol"  .
+<https://ifkw.lmu.de/xml-dev-0-1/#Mariupol> <stc://base-0-4/assign context> <https://dbpedia.org/page/Mariupol> _:rel29 .
+_:rel29 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://dbpedia.org/page/Bundestag> <stc://media-0-4/pass a law> _:rel1 _:rel3 .
+_:rel3 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://dbpedia.org/page/Photography> <stc://base-0-4/assign context> _:rel28 _:rel30 .
+_:rel30 <http://purl.org/dc/terms/title> "Bilder vom Stahlwerk in Mariupol (Ukraine)"  .
+_:rel30 <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q4830036> _:rel31 .
+_:rel31 <http://purl.org/dc/terms/title> "Die Bilder vom Stahlwerk in Mariupol (Ukraine) sind furchtbar"  .
+<https://dbpedia.org/page/Christian_Democratic_Union_of_Germany> <stc://base-0-4/expresses opinion> _:rel31  .
+<https://ifkw.lmu.de/xml-dev-0-1/Unterstützung> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q212> _:rel4 .
+_:rel4 <http://purl.org/dc/terms/title> "Unterstützung der Ukraine"  .
+_:rel4 <https://ifkw.lmu.de/xml-dev-0-1/ist Ursache für> _:rel1  .
+_:rel1 <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/wichtig>  .
+_:rel1 <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q105766445>  .
+<https://ifkw.lmu.de/xml-dev-0-1/ein Zeichen setzen> <stc://base-0-4/assign context> <https://ifkw.lmu.de/xml-dev-0-1/#Solidarität> _:rel8 .
+_:rel8 <http://purl.org/dc/terms/title> "ein Zeichen setzen für Solidarität"  .
+<https://ifkw.lmu.de/xml-dev-0-1/#Freiheit> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q243968> _:rel9 .
+_:rel9 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .

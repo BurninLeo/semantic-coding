@@ -1,0 +1,26 @@
+<https://www.wikidata.org/wiki/Q49768> <stc://base-0-4/is part of> <https://dbpedia.org/page/Cabinet_of_Germany>  .
+_:rel9 <stc://base-0-4/is part of> <https://www.wikidata.org/wiki/Q1406816> _:rel10 .
+_:rel10 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://ifkw.lmu.de/xml-dev-0-1/Bündnisfähigkeit> <stc://base-0-4/and> <https://ifkw.lmu.de/xml-dev-0-1/Verteidigungsfähigkeit> _:rel11 .
+_:rel11 <http://purl.org/dc/terms/title> "Bündnis- und Verteidigungsfähigkeit"  .
+_:rel11 <https://ifkw.lmu.de/xml-dev-0-1/darf nicht> <https://www.wikidata.org/wiki/Q105766481> _:rel12 .
+_:rel12 <http://purl.org/dc/terms/title> "Deutsche Bündnis- und Verteidigungfähigkeit darf nicht eingeschränkt werden"  .
+_:rel11 <stc://base-0-4/assign context> <https://dbpedia.org/page/Germany>  .
+_:rel12 <stc://base-0-4/is part of> <https://www.wikidata.org/wiki/Q1406816>  .
+<https://dbpedia.org/page/Germany> <https://ifkw.lmu.de/xml-dev-0-1/darf nicht> <https://www.wikidata.org/wiki/Q1591638> _:rel15 .
+_:rel15 <http://purl.org/dc/terms/title> "Deutschland darf nicht zur Kriegspartei werden"  .
+_:rel15 <stc://base-0-4/is part of> <https://www.wikidata.org/wiki/Q1406816>  .
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/is part of> <https://www.wikidata.org/wiki/Q49768> _:rel2 .
+_:rel2 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/is a> <https://dbpedia.org/page/Chancellor_of_Germany>  .
+<https://www.wikidata.org/wiki/Q49768> <stc://base-0-4/does> <https://www.wikidata.org/wiki/Q56119332> _:rel4 .
+_:rel4 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://www.wikidata.org/wiki/Q49768> <https://www.openthesaurus.de/synonyme/führen> <https://dbpedia.org/page/Cabinet_of_Germany> _:rel5 .
+_:rel5 <http://purl.org/dc/terms/title> "SPD-geführte Bundesregierung Deutschlands"  .
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/and> _:rel5 _:rel6 .
+_:rel6 <http://purl.org/dc/terms/title> "Bundeskanzler Olaf Scholz und die SPD-geführte Bundesregierung Deutschlands"  .
+_:rel6 <stc://base-0-4/does> <https://ifkw.lmu.de/xml-dev-0-1/Lieferung von Waffen an die Ukraine> _:rel7 .
+_:rel7 <http://purl.org/dc/terms/title> "Vornahme von Waffen- und Materiallieferung an Ukraine durch Scholz und Bundesregierung"  .
+<https://www.wikidata.org/wiki/Q1406816> <stc://base-0-4/is condition for> _:rel7  .
+_:rel6 <https://www.openthesaurus.de/synonyme/absprechen> <https://ifkw.lmu.de/xml-dev-0-1/Deutsche Bündnispartner> _:rel9 .
+_:rel9 <http://purl.org/dc/terms/title> "Absprechen mit deutschen Bündnispartner:innen"  .

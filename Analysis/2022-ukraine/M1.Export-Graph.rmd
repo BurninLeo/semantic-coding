@@ -1,0 +1,132 @@
+---
+title: "Export für yEd"
+author: "Dominik Leiner"
+date: "31.05.2022"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+for (tmpPackage in c("pander","knitr","tidyverse")) {
+  if (!require(tmpPackage, character.only = T)) {
+    install.packages(tmpPackage, dependencies = T)
+    library(tmpPackage, character.only = T)
+  }
+}
+
+rm(list=ls())
+source("semantic-classes.R")
+source("export-yed.R")
+
+load("M1.RData")
+```
+
+Hier wird das ganze als GraphML-Datei für das Programm yEd exportiert. Das ist kein sauberer Graph, sondern vielmehr ein Netzwerk mit vielen Labels, um das ganze nett zu visualisieren. Wenn man die Dateien in yEDgeöffnet hat, muss man dem Programm noch die Anordnung überlassen, z.B. "Layout" -> "Organisch".
+
+Dieses Script visualisiert die Relationen in zwei Versionen:
+
+  * **export.multiple-g.graphML** - hier werden Konzepte, die aus Relationen entstehen, als Kästchen/Gruppen dargestellt, welche die Basis-Entitäten enthalten. Dies kann auch mehrfach verschachtelt sein. Allerdings können die enthaltenen Entitäten nur angezeigt werden, wenn sie nicht gleichzeitig Teil eines anderen Konzepts sind, daher bleibe einige Kästchen/Gruppen leer.
+  * **export.multiple-f.graphML** - hier werden alle Entitäten "flach", also nicht verschachtelt verknüpft. Ein Konzept steht dann auf derselben Ebene wie die zugrundeliegenden Entitäten.
+  
+
+```{r}
+getTagColor = function(tags) {
+  c = tags$contains("cdu")
+  s = tags$contains("spd")
+  if (c && s) {
+    return("#CC00CC")
+  }
+  if (c) {
+    return("#000000")
+  }
+  if (s) {
+    return("#FF0000")
+  }
+  return("#CCCCCC")
+}
+
+getTagColorPlatform = function(tags) {
+  t = tags$contains("twitter")
+  f = tags$contains("facebook")
+  if (f && t) {
+    return("#00FFFF")
+  }
+  if (t) {
+    return("#00CC66")
+  }
+  if (f) {
+    return("#0000FF")
+  }
+  return("#CCCCCC")
+}
+
+# export_yED(methods[["text380"]], "export.380.graphML", edgeColor = getTagColor)
+# export_yED(methods[["text380"]], "export.380f.graphML", edgeColor = getTagColor, groups = F)
+# 
+# export_yED(methods[["text465"]], "export.465.graphML", edgeColor = getTagColor)
+# export_yED(methods[["text423"]], "export.423.graphML", edgeColor = getTagColor)
+# export_yED(methods[["text380"]] + methods[["text465"]], "export.380+465.graphML", edgeColor = getTagColor)
+
+complete =
+    # Twitter
+    methods[["text380"]] + methods[["text423"]] + methods[["text439"]] + methods[["text449"]] + methods[["text454"]] +
+    methods[["text465"]] + methods[["text479"]] + methods[["text487"]] + methods[["text505"]] + methods[["text532"]] +
+    # Facebook
+    methods[["text585"]] + methods[["text592"]] + methods[["text602"]] + methods[["text626"]] + methods[["text647"]] +
+    methods[["text554"]] + methods[["text566"]] + methods[["text613"]] + methods[["text635"]]
+
+# Mit Gruppen-Knoten
+export_yED(complete, "export.multiple-g.graphML", edgeColor = getTagColor)
+
+# Flach - kombinierte Entitäten als Einzelknoten
+export_yED(complete, "export.multiple-f.graphML", edgeColor = getTagColor, groups = F)
+
+export_yED(complete, "export.multiple-platforms.graphML", edgeColor = getTagColorPlatform, groups = F)
+
+# e = methods[[1]]$edgelist()
+# 
+# g <- graph.edgelist(e)
+# plot(g)
+# 
+# write_graph(g, "export.graphml", "graphml")
+# # write_graph(g, "export.gml", "gml")
+# 
+# h = read_graph("sample.r2.graphml", format="graphml")
+# 
+# g <- make_empty_graph() %>%
+#   add_vertices(3, color = "red") %>%
+#   add_vertices(2, color = "green") %>%
+#   add_edges(c(1,2, 2,3, 3,4, 4,5))
+# plot(g)
+# 
+# 
+# g <- make_ring(10) %>%
+#   set_vertex_attr("color", value = "red") %>%
+#   set_vertex_attr("label", value = letters[1:10])
+#   vertex_attr(g, "label")
+# vertex_attr(g)
+# plot(g)
+
+
+# export_yED(semantic=methods[[1]], 'export.test01.graphml')
+# export_yED(semantic=methods[[2]], 'export.test02.graphml')
+# export_yED(semantic=methods[[3]], 'export.test03.graphml')
+# 
+# export_yED(semantic=methods[[11]], 'export.test03.graphml')
+```
+
+
+```{r}
+# s = new("semantic", name="test00", relations=NULL)
+# n1 = new("stcIRI", id="iri://A")
+# n2 = new("stcIRI", id="iri://B")
+# n3 = new("stcIRI", id="iri://C")
+# e1 = new("stcIRI", id="iri://edge")
+# s$add(new("stcRelation", entityA=n1, operator=e1, entityB=n2))
+# s$add(new("stcRelation", entityA=n2, operator=e1, entityB=n3))
+# 
+# export_yED(semantic=s, 'export.test00.graphml')
+```

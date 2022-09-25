@@ -1,0 +1,48 @@
+<https://www.wikidata.org/wiki/Q104717411> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q1023134> _:rel1 .
+_:rel1 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://dbpedia.org/page/Vladimir_Putin> <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q4692287> _:rel11 .
+_:rel11 <http://purl.org/dc/terms/title> "Aggressor Vladimir Putin"  .
+_:rel11 <https://www.openthesaurus.de/synonyme/erfordern> <https://www.wikidata.org/wiki/Q5919191> _:rel12 .
+_:rel12 <http://purl.org/dc/terms/title> "Aggressor wie Vladimir Putin erfordert eine militärische Intervention"  .
+<https://www.wikidata.org/wiki/Q1345380> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q1023134> _:rel13 .
+_:rel13 <http://purl.org/dc/terms/title> "Entschließungsantrag der CDU/CSU Bundestagsfraktion"  .
+_:rel13 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://ifkw.lmu.de/xml-dev-0-1/Unterstützung> <stc://base-0-4/assign context> <https://dbpedia.org/page/Ukraine> _:rel14 .
+_:rel14 <http://purl.org/dc/terms/title> "Unterstützung der Ukraine"  .
+_:rel14 <https://ifkw.lmu.de/xml-dev-0-1/ist Ursache für> _:rel13 _:rel15 .
+_:rel15 <http://purl.org/dc/terms/title> "Unterstützung der Ukraine ist Ursache für den heutigen Entschließungsantrag der CDU/CSU Bundestagsfraktion"  .
+_:rel13 <stc://base-0-4/locate in time> <https://ifkw.lmu.de/xml-dev-0-1/heute>  .
+_:rel9 <stc://base-0-4/expresses opinion> _:rel12 _:rel17 .
+_:rel17 <http://purl.org/dc/terms/title> "Aussage von Friedrich Merz"  .
+_:rel9 <stc://base-0-4/expresses opinion> _:rel15  .
+_:rel17 <stc://base-0-4/assign spacial> <https://www.wikidata.org/wiki/Q179875>  .
+<https://ifkw.lmu.de/xml-dev-0-1/Lieferung von Waffen an die Ukraine> <stc://base-0-4/assign context> <https://ifkw.lmu.de/xml-dev-0-1/schwere Waffen> _:rel2 .
+_:rel2 <http://purl.org/dc/terms/title> "schwere Waffenlieferungen an die Ukraine"  .
+<https://dbpedia.org/page/Johann_Wadephul> <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/Fraktionsvize> _:rel20 .
+_:rel20 <http://purl.org/dc/terms/title> "Fraktionsvize Johann Wadephul"  .
+<https://ifkw.lmu.de/xml-dev-0-1/Bild der Geschlossenheit> <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/wichtig> _:rel21 .
+_:rel21 <http://purl.org/dc/terms/title> "es ist wichtig, ein Bild der Geschlossenheit zu zeigen"  .
+_:rel21 <stc://base-0-4/locate in time> <https://ifkw.lmu.de/xml-dev-0-1/aktuell> _:rel22 .
+_:rel22 <http://purl.org/dc/terms/title> "Aktuell ist es wichtig, ein Bild der Geschlossenheit zu zeigen"  .
+<https://dbpedia.org/page/Vladimir_Putin> <stc://base-0-4/does> <https://www.wikidata.org/wiki/Q474138> _:rel23 .
+_:rel23 <http://purl.org/dc/terms/title> "Angriffskrieg Vladimir Putins"  .
+<https://www.wikidata.org/wiki/Q1023134> <https://www.openthesaurus.de/synonyme/durchgehen%20lassen> _:rel23 _:rel24 .
+_:rel24 <http://purl.org/dc/terms/title> "CDU/CSU Bundestagsfraktion lässt Vladimir Putin den Angriffskrieg durchgehen"  .
+<https://www.wikidata.org/wiki/Q1023134> <https://www.openthesaurus.de/synonyme/nicht%20tun> _:rel24 _:rel25 .
+_:rel25 <http://purl.org/dc/terms/title> "CDU/CSU Bundestagsfraktion wird Vladimir Putin den Angriffskrieg nicht durchgehen lassen"  .
+_:rel20 <stc://base-0-4/expresses opinion> _:rel22  .
+_:rel20 <stc://base-0-4/expresses opinion> _:rel25  .
+<https://www.wikidata.org/wiki/Q15275192> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q1023134> _:rel3 .
+_:rel3 <http://purl.org/dc/terms/title> "politische Initiative der CDU/CSU Bundestagsfraktion"  .
+_:rel2 <stc://base-0-4/is a> _:rel3 _:rel4 .
+_:rel4 <http://purl.org/dc/terms/title> "Politische Initiative der CDU/CSU Bundestagsfraktion zur Lieferung schwerer Waffen an die Ukraine"  .
+<https://www.wikidata.org/wiki/Q1241480> <stc://base-0-4/locate in time> <https://ifkw.lmu.de/xml-dev-0-1/wochenlang> _:rel5 .
+_:rel5 <http://purl.org/dc/terms/title> "wochenlange Hängepartie"  .
+_:rel5 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:figurative>  .
+_:rel5 <stc://base-0-4/assign context> <https://dbpedia.org/page/Cabinet_of_Germany> _:rel6 .
+_:rel6 <http://purl.org/dc/terms/title> "wochenlange Hängepartie der Bundesregierung"  .
+_:rel6 <stc://base-0-4/locate in time> <https://ifkw.lmu.de/xml-dev-0-1/zu Ende sein> _:rel7 .
+_:rel7 <http://purl.org/dc/terms/title> "Ende der wochenlangen Hängepartie der Bundesregierung"  .
+_:rel4 <https://ifkw.lmu.de/xml-dev-0-1/ist Ursache für> _:rel7  .
+<https://dbpedia.org/page/Friedrich_Merz> <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q928764> _:rel9 .
+_:rel9 <http://purl.org/dc/terms/title> "Fraktionschef Friedrich Merz"  .

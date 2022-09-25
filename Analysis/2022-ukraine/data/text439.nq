@@ -1,0 +1,19 @@
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/is a> <https://dbpedia.org/page/Chancellor_of_Germany>  .
+_:rel7 <stc://base-0-4/assign context> <https://ifkw.lmu.de/xml-dev-0-1/Militärischer Einmarsch russischer Truppen in die Ukraine>  .
+_:rel8 <stc://base-0-4/assign context> <https://ifkw.lmu.de/xml-dev-0-1/Militärischer Einmarsch russischer Truppen in die Ukraine>  .
+_:rel9 <stc://base-0-4/assign context> <https://ifkw.lmu.de/xml-dev-0-1/Militärischer Einmarsch russischer Truppen in die Ukraine>  .
+<https://ifkw.lmu.de/xml-dev-0-1/Militärischer Einmarsch russischer Truppen in die Ukraine> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q15860072>  .
+<https://dbpedia.org/page/Chancellor_of_Germany> <stc://base-0-4/does> <https://www.wikidata.org/wiki/Q56119332>  .
+<https://www.wikidata.org/wiki/Q243968> <stc://base-0-4/and> <https://www.wikidata.org/wiki/Q42008> _:rel3 .
+_:rel3 <http://purl.org/dc/terms/title> "Freiheit und Souveränität"  .
+_:rel3 <stc://base-0-4/and> <https://www.wikidata.org/wiki/Q7174> _:rel4 .
+_:rel4 <http://purl.org/dc/terms/title> "Freiheit, Souveränität und Demokratie"  .
+<https://www.wikidata.org/wiki/Q212> <stc://base-0-4/wants> _:rel4 _:rel5 .
+_:rel5 <http://purl.org/dc/terms/title> "Ukraine will ihre Souveränität, Freiheit und Demokratie verteidigen"  .
+<https://dbpedia.org/page/Germany> <https://www.openthesaurus.de/synonyme/unterstützen> _:rel5  .
+<https://dbpedia.org/page/Germany> <https://www.openthesaurus.de/synonyme/handeln> <https://www.wikidata.org/wiki/Q830031> _:rel7 .
+_:rel7 <http://purl.org/dc/terms/title> "Deutschland handelt besonnen"  .
+<https://dbpedia.org/page/Germany> <https://www.openthesaurus.de/synonyme/handeln> <https://ifkw.lmu.de/xml-dev-0-1/der Situation entsprechend> _:rel8 .
+_:rel8 <http://purl.org/dc/terms/title> "Deutschland handelt an die Situation angepasst"  .
+<https://dbpedia.org/page/Germany> <https://www.openthesaurus.de/synonyme/handeln> <https://ifkw.lmu.de/xml-dev-0-1/entschlossen> _:rel9 .
+_:rel9 <http://purl.org/dc/terms/title> "Deutschland handelt entschlossen"  .

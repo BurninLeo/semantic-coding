@@ -1,0 +1,21 @@
+<https://www.wikidata.org/wiki/Q49768> <stc://base-0-4/does> <https://www.wikidata.org/wiki/Q56119332> _:rel1 .
+_:rel1 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+_:rel9 <stc://base-0-4/locate in time> <https://ifkw.lmu.de/xml-dev-0-1/täglich>  .
+<https://dbpedia.org/page/Lars_Klingbeil> <stc://base-0-4/expresses opinion> _:rel5  .
+<https://dbpedia.org/page/Lars_Klingbeil> <stc://base-0-4/expresses opinion> _:rel6  .
+<https://dbpedia.org/page/Lars_Klingbeil> <stc://base-0-4/expresses opinion> _:rel9  .
+<https://dbpedia.org/page/Lars_Klingbeil> <stc://base-0-4/assign spacial> <https://www.wikidata.org/wiki/Q135984>  .
+<https://dbpedia.org/page/Lars_Klingbeil> <stc://base-0-4/is part of> <https://www.wikidata.org/wiki/Q49768> _:rel15 .
+_:rel15 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://ifkw.lmu.de/xml-dev-0-1/Lieferung von Waffen an die Ukraine> <stc://base-0-4/assign spacial> <https://www.wikidata.org/wiki/Q212>  .
+<https://ifkw.lmu.de/xml-dev-0-1/Lieferung von Waffen an die Ukraine> <stc://base-0-4/assign context> <https://www.wikidata.org/wiki/Q15860072>  .
+<https://dbpedia.org/page/Germany> <stc://base-0-4/does> <https://ifkw.lmu.de/xml-dev-0-1/Lieferung von Waffen an die Ukraine> _:rel4 .
+_:rel4 <http://purl.org/dc/terms/title> "Deutsche Lieferung von Waffen an die Ukraine im Russland-Ukraine-Konflikt"  .
+_:rel4 <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/Qualitätsverbesserung> _:rel5 .
+_:rel5 <http://purl.org/dc/terms/title> "Qualitätsverbesserung deutscher Waffenlieferungen an die Ukraine"  .
+_:rel4 <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/Quanitätssteigerung> _:rel6 .
+_:rel6 <http://purl.org/dc/terms/title> "Quantitätssteigerung deutscher Waffenlieferungen an die Ukraine"  .
+_:rel5 <stc://base-0-4/locate in time> <https://ifkw.lmu.de/xml-dev-0-1/Innerhalb der letzten Wochen>  .
+_:rel6 <stc://base-0-4/locate in time> <https://ifkw.lmu.de/xml-dev-0-1/Innerhalb der letzten Wochen>  .
+<https://dbpedia.org/page/Germany> <https://www.openthesaurus.de/synonyme/absprechen> <https://ifkw.lmu.de/xml-dev-0-1/Deutsche Bündnispartner> _:rel9 .
+_:rel9 <http://purl.org/dc/terms/title> "Deutsche Abstimmung mit internationalen Bündnispartnern"  .

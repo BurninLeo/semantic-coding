@@ -1,0 +1,31 @@
+<https://www.wikidata.org/wiki/Q49768> <stc://base-0-4/does> <https://www.wikidata.org/wiki/Q104717411> _:rel1 .
+_:rel1 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+_:rel4 <https://www.openthesaurus.de/synonyme/erfordern> <https://www.wikidata.org/wiki/Q1920566>  .
+<https://www.wikidata.org/wiki/Q1920566> <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/eindeutig/klar> _:rel11 .
+_:rel11 <http://purl.org/dc/terms/title> "eindeutige Antwort"  .
+_:rel11 <stc://base-0-4/has_attribute> <stc://base-0-4/relation:background>  .
+<https://dbpedia.org/page/NATO> <https://www.openthesaurus.de/synonyme/nicht%20tun> <https://www.wikidata.org/wiki/Q1591638> _:rel12 .
+_:rel12 <http://purl.org/dc/terms/title> "die NATO wird nicht Kriegspartei"  .
+_:rel12 <stc://base-0-4/is> _:rel11 _:rel13 .
+_:rel13 <http://purl.org/dc/terms/title> "Eindeutige Antwort auf die Frage: NATO wird nicht Kriegspartei"  .
+_:rel7 <stc://base-0-4/expresses opinion> _:rel13 _:rel14 .
+_:rel14 <http://purl.org/dc/terms/title> "Bundeskanzler Scholz sagt, es gibt eine eindeutige Antwort auf die Frage, ob es auch bei uns Krieg geben wird: NATO wird nicht Kriegspartei"  .
+_:rel14 <stc://base-0-4/locate in time> <https://ifkw.lmu.de/xml-dev-0-1/heute>  .
+_:rel14 <stc://base-0-4/assign spacial> <https://dbpedia.org/page/Bundestag>  .
+_:rel14 <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/eindeutig/klar>  .
+<https://www.wikidata.org/wiki/Q16831523> <stc://base-0-4/assign context> <Vernunft> _:rel18 .
+_:rel18 <http://purl.org/dc/terms/title> "Gebot der Vernunft"  .
+_:rel12 <stc://base-0-4/is a> _:rel18  .
+<https://dbpedia.org/page/NATO> <https://www.openthesaurus.de/synonyme/nicht%20tun> <https://www.wikidata.org/wiki/Q1591638>  .
+<https://ifkw.lmu.de/xml-dev-0-1/Alternative> <stc://base-0-4/assign context> _:rel12 _:rel20 .
+_:rel20 <http://purl.org/dc/terms/title> "eine Alternative zu NATO wird nicht Kriegspartei"  .
+_:rel20 <stc://base-0-4/is> <https://ifkw.lmu.de/xml-dev-0-1/unverantwortlich>  .
+<https://www.wikidata.org/wiki/Q198> <stc://base-0-4/assign spacial> <https://dbpedia.org/page/Germany> _:rel3 .
+_:rel3 <http://purl.org/dc/terms/title> "Krieg in Deutschland"  .
+_:rel3 <stc://base-0-4/is> <https://www.wikidata.org/wiki/Q189756> _:rel4 .
+_:rel4 <http://purl.org/dc/terms/title> "Wird es in Deutschland Krieg geben?"  .
+<https://ifkw.lmu.de/xml-dev-0-1/viele Menschen> <stc://base-0-4/does> <https://ifkw.lmu.de/xml-dev-0-1/sich mit etwas umtreiben> _:rel5 .
+_:rel5 <http://purl.org/dc/terms/title> "viele umtreiben sich mit etwas"  .
+_:rel4 <https://ifkw.lmu.de/xml-dev-0-1/ist Ursache für> _:rel5  .
+<https://dbpedia.org/page/Olaf_Scholz> <stc://base-0-4/is> <https://dbpedia.org/page/Chancellor_of_Germany> _:rel7 .
+_:rel7 <http://purl.org/dc/terms/title> "Bundeskanzler Olaf Scholz"  .

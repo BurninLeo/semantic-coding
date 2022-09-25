@@ -1,0 +1,119 @@
+---
+title: "Tagging der Posts nach Partei und Plattform"
+author: "Dominik Leiner"
+date: "31.05.2022"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+for (tmpPackage in c("pander","knitr","tidyverse")) {
+  if (!require(tmpPackage, character.only = T)) {
+    install.packages(tmpPackage, dependencies = T)
+    library(tmpPackage, character.only = T)
+  }
+}
+
+rm(list=ls())
+source("semantic-classes.R")
+load("M0.RData")
+```
+
+Wir haben die Kodierungen für die 10 Texte (5-mal SPD, 5-mal CDU/CSU) eingelesen und weisen diese nun erstmal den Kategorien 1 (SPD) und 2 (CDU) zu.
+
+```{r}
+# Die Methode addTags() setzt standardmäßig keine Tags, wenn das Attribut "Hintergrundwissen" für eine Relation gesetzt wurde 
+exclBG = c("stc://base-0-4/relation:background", "Hintergrundwissen")
+for (text in c("text380", "text423", "text439", "text449", "text454")) {
+    methods[[text]]$addTags(new("stcTags", "spd"), exclBG)
+    methods[[text]]$addTags(new("stcTags", "twitter"), exclBG)
+}
+for (text in c("text465", "text479", "text487", "text505", "text532")) {
+    methods[[text]]$addTags(new("stcTags", "cdu"), exclBG)
+    methods[[text]]$addTags(new("stcTags", "twitter"), exclBG)
+}
+# 585+592+602 gehören zusammen (ein Post)
+for (text in c("text585", "text592", "text602", "text626", "text647")) {
+    methods[[text]]$addTags(new("stcTags", "spd"), exclBG)
+    methods[[text]]$addTags(new("stcTags", "facebook"), exclBG)
+}
+# 554+566 gehören zusammen (ein Post)
+for (text in c("text554", "text566", "text613", "text635")) {
+    methods[[text]]$addTags(new("stcTags", "cdu"), exclBG)
+    methods[[text]]$addTags(new("stcTags", "facebook"), exclBG)
+}
+
+# Tag für Hintergrundwissen
+for (text in names(methods)) {
+  relations = methods[[text]]$relations
+  for (r in relations) {
+      # Das Attribut "relation:background" wird wohl über die iriLabels in "Hintergrundwissen" übersetzt
+    if (r$containsAttribute("Hintergrundwissen")) {
+      r$tags$add("bg")
+    }
+  }
+}
+
+rm(text, r, relations, exclBG)
+```
+
+Jetzt fügen wir noch Hintergrundwissen zu Synonymen hinzu und vereinfachen gleich mal, dass die Ukraine zwei UUIDs verwendet.
+
+```{r}
+bgRelations = c(
+    new("stcRelation",
+        entityA = new("stcIRI", id="https://www.wikidata.org/wiki/Q212"),
+        operator = new("stcIRI", id="stc://base/identical"),
+        entityB = new("stcIRI", id="https://dbpedia.org/page/Ukraine"),
+        attributes = c("stc://base-0-4/relation:background")
+    ),
+    new("stcRelation",
+        entityA = new("stcIRI", id="https://ifkw.lmu.de/xml-dev-0-1/#Putin"),
+        operator = new("stcIRI", id="stc://media/hashtag_means"),
+        entityB = new("stcIRI", id="https://dbpedia.org/page/Vladimir_Putin"),
+        attributes = c("stc://base-0-4/relation:background")
+    ),
+    new("stcRelation",
+        entityA = new("stcIRI", id="https://ifkw.lmu.de/xml-dev-0-1/#Bundestag"),
+        operator = new("stcIRI", id="stc://media/hashtag_means"),
+        entityB = new("stcIRI", id="https://dbpedia.org/page/Bundestag"),
+        attributes = c("stc://base-0-4/relation:background")
+    ),
+    new("stcRelation",
+        entityA = new("stcIRI", id="https://ifkw.lmu.de/xml-dev-0-1/#Kiew"),
+        operator = new("stcIRI", id="stc://media/hashtag_means"),
+        entityB = new("stcIRI", id="https://www.wikidata.org/wiki/Q1899"),
+        attributes = c("stc://base-0-4/relation:background")
+    ),
+    new("stcRelation",
+        entityA = new("stcIRI", id="https://ifkw.lmu.de/xml-dev-0-1/#Mariupol"),
+        operator = new("stcIRI", id="stc://media/hashtag_means"),
+        entityB = new("stcIRI", id="https://dbpedia.org/page/Mariupol"),
+        attributes = c("stc://base-0-4/relation:background")
+    )
+)
+
+# Merge the different IRIs and the Hashtags
+for (tmp in names(methods)) {
+    # First add the new relations
+    for (rel in bgRelations) {
+        methods[[tmp]]$add(rel)
+    }
+    # Then merge
+    methods[[tmp]] = methods[[tmp]]$mergeIRIs(c("stc://base/identical", "stc://media/hashtag_means"))
+}
+
+# Cleanup
+rm(bgRelations, rel)
+
+methods[["text532"]]$relationsPrint()
+```
+
+
+```{r}
+save.image("M1.RData")
+```
+
