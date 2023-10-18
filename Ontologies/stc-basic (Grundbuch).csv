@@ -1,0 +1,176 @@
+O/E/A	UUID	Title (en)	Bezeichnung (de)	Beschreibung (falls nicht aus externer Ontologie entnommen)/Definition	Attribute	Relationen	Restriktionen
+							
+		Technische Enitäten					
+entity	stc://basic-1-0/Entity	Entity	Entität	Bezeichnet eine Entität im Rahmen der semantischen Kodierung.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/Operator	Operator	Operator	Bezeichnet einen Operator im Rahmen der semantischen Kodierung.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/EntityOrOperator				"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[stc://basic-1-0/Entity] <stc://basic-1-0/or> [stc://basic-1-0/Operator]  →  [stc://basic-1-0/EntityOrOperator]	
+entity	stc://basic-1-0/Attribute	Attribut	Attribut	Bezeichnet ein Attribute im Rahmen der semantischen Kodierung.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/Element	Element	Element	Bezeichnet ein Element der semantischen Kodierung (Entität, Operator oder Attribut). Alle Einträge im Codebuch gehören automatisch dieser Klasse an.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[stc://basic-1-0/EntityOrOperator] <stc://basic-1-0/or> [stc://basic-1-0/Attribute]  →  [stc://basic-1-0/Element]	
+entity	stc://basic-1-0/Relation	Relation	Relation	Eine Relation, bestehend aus zwei Entitäten und einem Operator.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/EntityA	Entity A	Entität A	Bezeichnet die Entität, die links des Operators steht. Diese Entität wird verwendet, um z.B. Restriktionen für Operatoren zu formulieren.	stc://attr-1-0/abstract		
+entity	stc://basic-1-0/EntityB	Entity B	Entität B	Bezeichnet die Entität, die rechts des Operators steht. Diese Entität wird verwendet, um z.B. Restriktionen für Operatoren zu formulieren.	stc://attr-1-0/abstract		
+entity	stc://basic-1-0/EntityDefined	Entity Defined	definierte Entität	Bezeichnet die Entität, welche durch eine Relation definiert wird	stc://attr-1-0/abstract		
+							
+		Allgemeine Kategorien					
+entity	stc://basic-1-0/PersonEntity	Abstract Person	Abstrakte Person	Die Entität beschreibt eine Person (juristisch oder natürlich).	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	https://schema.org/Person	Natural Person	Natürliche Person	Die Entität beschreibt eine natürliche Person inkl. Funktionaler Figuren.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[https://schema.org/Person] <is a> [stc://basic-1-0/PersonEntity]	
+entity	stc://basic-1-0/LegalPerson	Legal Person	Juristische Person	Die Entität bezeichnet eine juristische Person.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[stc://basic-1-0/LegalPerson] <is a> [stc://basic-1-0/PersonEnitity]	
+entity	stc://basic-1-0/Institution	Institution	Institution	Eine formal definierte Institution (Unternehmen, NGO, Partei, Funktionseinheit der Gesellschaft z.B. Regierung, Opposition)	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/ActingEntity	Acting Entity	Akteur	Eine Person, Gruppe oder Institution, die Handlungen ausführen kann	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/Activity	Activity	Handlung	Die Entität bezeichnet eine Tätigkeit oder Handlung	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	https://schema.org/Event	Event	Ereignis	Die Entität bezeichnet ein Ereignis, welches durch einen Zeitraum und einen Ort (kann auch abstrakt sein) gekennzeichnet ist.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	https://schema.org/Place	Place	Ort	Eine geographische Ortsdefinition, entweder ein Punkt oder ein Gebiet (geografischer Raum), auch anwendbar für abstrakte Orte wie den „Weltraum“ oder das „Internet“.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[https://schema.org/Place] <is a> [stc://basic-1-0/SpacialContext]	
+entity	stc://basic-1-0/Issue	Issue	Thema	Die Entität bezeichnet ein Thema, welchem Akteure, Ereignisse, Werte u.ä. zugeordnet werden.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/SocialGroup	Social Group	Soziale Gruppe	Die Entität bezeichnet eine soziale Gruppe, die durch ein oder mehrere Merkmale definiert wird – oder auch nicht, wenn die soziale Gruppe abstrakt gehalten oder das Merkmal subjektiv ist (z.B. „schlaue Menschen“, „Opportunisten“).	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/PersonGroup	Group of Persons	Gruppe von Personen	Die Entität bezeichnet eine Gruppe, die aus mehreren Personen besteht.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/Context	Context	Kontext	Ein Kontext, der nicht das „hier und jetzt“ bezeichnet, z.B. die „Vergangenheit“ oder ein geografisch entfernter Ort	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/TemporalContext	Temporal Context	Zeitlicher Kontext	Ein zeitlicher Kontext, in welchem ein Ereignis stattfindet oder stattgefunden hat.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[stc://basic-1-0/TemporalContext] <is a> [stc://basic-1-0/Context]	
+entity	stc://basic-1-0/SpacialContext	Spacial Context	Örtliche Kontext	Ein örtlicher oder geographischer Kontext, wo ein Ereignis stattfindet oder stattgefunden hat.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[stc://basic-1-0/SpacialContext] <is a> [stc://basic-1-0/Context]	
+entity	stc://basic-1-0/Topic	Topic/Issue/Section	Thema/Vorfall/Rubrik	Ein mehr oder weniger abstraktes Thema (z.B. „Arbeitslosigkeit“, „9/11“, „Wirtschaft“).	"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[stc://basic-1-0/SpacialContext] <is a> [stc://basic-1-0/Context]	
+entity	stc://basic-1-0/Scheme	Scheme	Schema	Ein Schema im Sinne von Priming und Agenda Setting, also ein prototypisches Ablaufmuster für Verhalten, Tätigkeiten, politische Prozesse u.s.w.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/ActionScheme	Action Scheme	Handlungsschema	Eine Entität, welche eins Handlungsmuster bezeichnet, das bestimmte Aktivitäten, Rollen und/oder Kontexte beinhaltet.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[stc://basic-1-0/ActionScheme] <is a> [stc://basic-1-0/Scheme]	
+entity	stc://basic-1-0/Quantity	Quantity	Menge/Anzahl		"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/RelativeQuantity	Relative Quantity	Relativer Anteil	Eine Teilmenge oder ein Anteil von einer Gruppe oder Menge, wird in aller Regel konkretisiert.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/Quality	Adjective/quality	Adjektiv/Qualität	Eine Entität, welche die Qualität oder Art und Weise einer Handlung oder eines Sachverhalts bezeichnet.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/Action	Action	Handlung	Eine Entität, welche eine konkrete Handlung oder ein konkretes Verhalten bezeichnet.	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	https://schema.org/DataType	Data Type	Datentyp		"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	https://schema.org/Date	Date	Datum		"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[https://schema.org/Date] <is a> [https://schema.org/DataType]	
+entity	https://schema.org/Time	Time	Zeit	Zeitangabe ohne Information zum Datum	"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[https://schema.org/Time] <is a> [https://schema.org/DataType]	
+entity	https://schema.org/DateTime	Time on Date	Zeitpunkt an Datum		"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[https://schema.org/DateTime] <is a> [https://schema.org/DataType]	
+entity	https://schema.org/Duration	Duration	Dauer		"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[https://schema.org/Duration] <is a> [https://schema.org/DataType]	
+entity	stc://basic-1-0/DateOrTime	Date and/or Time	Datum und/oder Zeit		"stc://attr-1-0/class
+stc://attr-1-0/abstract"	"[https://schema.org/Date] <or> [https://schema.org/DateTime]  →  [stc://basic-1-0/DateOrTime]
+[stc://basic-1-0/DateOrTime] <is a> [stc://basic-1-0/TemporalContext]"	
+entity	stc://basic-1-0/DateRange	Date Range	Zeitraum	Zeitraum zwischen zwei Daten oder zwei Zeitpunkten, siehe <stc://ops-1-0/from_to_datetime>	"stc://attr-1-0/class
+stc://attr-1-0/abstract"	[stc://basic-1-0/DateRange] <is a> [stc://basic-1-0/TemporalContext]	
+entity	stc://basic-1-0/Emoji	Emoji	Emoji	Ein Emoticon, welches ein Objekt, eine Person oder ein Gesicht zeigt und als Symbol verwendet wird, siehe <stc://ops-1-0/implies>	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		
+entity	stc://basic-1-0/Avoidance	Avoiding something	Etwas vermeiden oder abwenden	Ein Ereignis oder Sachverhalt wird vermieden oder abgewendet.		[stc://basic-1-0/Avoidance] <is a> [stc://basic-1-0/Scheme]	
+							
+		Nicht-abstrakte Kategorien					
+entity	stc://basic-1-0/Author	Author	Verfasser:in	Die Person oder Personen, welche den Text verfasst hat oder als solche dargestellt wird. Bei gesprochenen Texten ist das die Sprecher:in. Diese Entität ist z.B. dann sinnvoll, wenn im Text eine Meinung geäußert wird.			
+entity	stc://basic-1-0/PastContext	Past Context	Vergangenheit	Eine vergangene Zeit, die ausreichend lange zurück liegt, dass sie keine aktuellen Geschehnisse oder Entwicklungen bezeichnet, womöglich aber deren Ursachen.		[stc://basic-1-0/PastContext] <is a> [stc://basic-1-0/TemporalContext]	
+entity	stc://basic-1-0/PassiveEntity	Passive Entity	Passiv-Entität	Diese Entität wird verwendet, wenn aus dem Text nicht ersichtlich wer bei einer geplanten oder vollzogenen Handlung der Akteur ist, üblicherweise bei Passiv-Formulierungen (z.B. „Müller wurde entlassen“ → [Passiv-Entität] <entlässt> [Müller]).		[stc://basic-1-0/PassiveEntity] <is a> [stc://basic-1-0/ActingEntity]	
+entity	stc://basic-1-0/SomePeople	Some People	Personen	Diese Entität bezeichnet eine oder mehrere nicht näher definierte Personen, z.B. zur Beschreibung von Tätigkeiten ohne dass ein Bezug zu einer konkreten Handlung besteht.		"[stc://basic-1-0/SomePerson] <is a> [https://schema.org/Person]
+[stc://basic-1-0/SomePerson] <is a> [stc://basic-1-0/ActingEntity]"	
+entity	stc://basic-1-0/SomeActingEntity	Some Acting Entity	Akteur	Diese Entität bezeichnet eine abstrakte Person oder Institution, z.B. zur Beschreibung von Tätigkeiten ohne dass ein Bezug zu einer konkreten Handlung besteht.		[stc://basic-1-0/SomeActingEntity] <is a> [stc://basic-1-0/ActingEntity]	
+entity	stc://basic-1-0/UnspecificQuantity	unspecific Quantity	unspezifischer Anteil	Ein nicht weiter spezifizierter Anteil einer Gruppe, wird i.d.R. mit dem Operator <Anteil> verwendet		[stc://basic-1-0/unspecificQuantity] <is a> [stc://basic-1-0/Quantity]	
+							
+		Anteile/Prozentangaben					
+entity	stc://basic-1-0/QuantityHalf	The Half	die Hälfte	50 Prozent einer Einheit		[stc://basic-1-0/QuantityHalf] <is a> [stc://basic-1-0/RelativeQuantity]	
+entity	stc://basic-1-0/QuantityThird	A Third	ein Dritte	33,33 Prozent einer Einheit		[stc://basic-1-0/QuantityThird] <is a> [stc://basic-1-0/RelativeQuantity]	
+entity	stc://basic-1-0/QuantityFourth	A Fourth	ein Viertel	25 Prozent einer Einheit		[stc://basic-1-0/QuantityFourth] <is a> [stc://basic-1-0/RelativeQuantity]	
+entity	stc://basic-1-0/QuantityFifth	A Fifth	ein Fünftel	20 Prozent einer Einheit		[stc://basic-1-0/QuantityFifth] <is a> [stc://basic-1-0/RelativeQuantity]	
+entity	stc://basic-1-0/QuantityMajority	A Majority	eine Mehrheit	Mehrheit bezeichnet die überwiegende Anzahl aus einer Gesamtanzahl von Personen, Meinungen oder Sachen (Gegenteil von Minderheit).		[stc://basic-1-0/QuantityMajority] <is a> [stc://basic-1-0/RelativeQuantity]	
+entity	stc://basic-1-0/QuantityMinority	A Minority	eine Minderheit	Eine Minderheit ist ein numerisch geringerer Teil einer Gesamtheit, der sich durch personale oder kulturelle Merkmale von der Mehrheit unterscheidet.		[stc://basic-1-0/QuantityMinority] <is a> [stc://basic-1-0/RelativeQuantity]	
+entity	stc://basic-1-0/QuantityNarrowMajority	A Narrow Majority	eine knappe Mehrheit			[stc://basic-1-0/QuantityNarrowMajority] <is a> [stc://basic-1-0/RelativeQuantity]	
+							
+		Zeitangaben					
+entity	stc://basic-1-0/TimeLastNight	TimeLastNight	Vergangene Nacht	Ein Ereignis wird in der vergangenen Nacht verortet.		[stc://basic-1-0/TimeLastNight] <is a> [stc://basic-1-0/Temporal Context]	
+entity	stc://basic-1-0/TimeLastDay	TimeLastDay	Gestern	Ein Ereignis wird dem vergangenen Tag zugeordnet.		[stc://basic-1-0/TimeLastDay] <is a> [stc://basic-1-0/Temporal Context]	
+entity	stc://basic-1-0/ForWeeks	for weeks	wochenlang	viele Wochen andauernd, anhaltend			
+entity	stc://basic-1-0/Daily	daily	täglich	jeden Tag (vor sich gehend, wiederkehrend)			
+entity	stc://basic-1-0/WithinTheLastFewWeeks	within the last few weeks	innerhalb der letzten Wochen	im Zeitraum der vergangenen zwei oder mehr Wochen			
+entity	stc://basic-1-0/Today	today	heute	am heutigen Tag			
+entity	stc://basic-1-0/Past	past	Vergangenheit	In der Vergangenheit liegend (zurückliegend)			
+entity	stc://basic-1-0/Future	future	Zukunft	Zeit, die noch bevorsteht, die noch nicht da ist; die erst kommende oder künftige Zeit (und das in ihr zu Erwartende)			
+entity	stc://basic-1-0/Currently	currently	aktuell	gegenwärtig vorhanden, bedeutsam für die unmittelbare Gegenwart; gegenwartsbezogen, -nah, zeitnah, zeitgemäß			
+							
+		Allgemeine Operatoren					
+operator	stc://ops-1-0/is_a	is a	ist ein/e	Die Entität A ist ein Element der Klasse, welche durch die Entität B definiert wird.			[stc://basic-1-0/EntityB] <stc://basic-1-0/has_attribute> [stc://basic-1-0/entity:class]
+operator	stc://ops-1-0/has_attribute	has attribute	besitzt das Attribut	Einer Relation oder einer Entität A wird ein Attribut B zugewiesen.	stc://attr-1-0/abstract		[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/Attribute]
+operator	stc://ops-1-0/identical	identical	ist identisch mit	Die Entität A ist identisch der Entität B. Dieser Operator wird benötigt, um im Hintergrundwissen abzulegen, dass eine Entität unterschiedliche UUIDs verwendet.			
+operator	stc://ops-1-0/corresponds_to	corresponds to	entspricht	Eine Entität A ist einer Entität B gleichwertig oder gleichartig.			
+operator	stc://ops-1-0/hashtag_means	hashtag means	Hashtag bedeutet	Wird im zu kodierenden Text ein Hashtag verwendet, so ist die Bedeutung des Hashtags (inhaltlicher Art) über den Operator <hashtag means> als Hintergrundwissen mit dem Hashtag zu verknüpfen. Ja nach Bedeutung kann Entität B z.B. eine Person oder ein Sachverhalt sein.			
+operator	stc://ops-1-0/profile_represents	profile represents	Profil repräsentiert	Wird eine SNS-Mention verwendet, so ist das über das mit der Mention verbundene Profil über den Operator <Profil repräsentiert> festzuhalten.			
+operator	stc://ops-1-0/implies	implies	impliziert	Wird ein Emoji verwendet und wird darüber eine Emotion übermittelt, so wird die durch das Emoji A übermittelte Emotion B über den Operator <stc://ops-1-0/implies> kodiert.			[stc://basic-1-0/EntityA] <is a> [stc://basic-1-0/Emoji]
+operator	stc://ops-1-0/part_of	is part of	ist Teil von	Die Entität A gehört zu oder ist eine Teilmenge der von Entität B bezeichneten Menge. Dies kann auch die Zugehörigkeit zu einer sozialen Gruppe beschreiben. Inverser Operator zu <stc://ops-1-0/contains>			
+operator	stc://ops-1-0/contains	contain(s)	enthält/enthalten	Eine Menge (Entität A) enthält/beinhaltet eine Entität B. Element B ist Teil der Menge A. Inverser Operator zu <stc://ops-1-0/part_of>.			
+operator	stc://ops-1-0/is	is	hat die Eigenschaft	Die Entität A hat die durch [Entität B] definierte Eigenschaft.			[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/Quality]
+operator	stc://ops-1-0/applicable	is applicable to	ist anwendbar auf	Legt fest, auf welche Elemente ein Attribut anwendbar ist.	stc://attr-1-0/abstract		
+operator	stc://ops-1-0/assign_topic	assign topic	gehört zu	Eine Entität A wird einem Thema B (Klasse:Thema) zugeordnet.			[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/Topic]
+operator	stc://ops-1-0/specified_by	is specified by	wird spezifiziert durch	Ein Schema A wird durch konkrete Personen, Sachverhalten, Kontext, … B spezifiziert. In aller Regel, aber nicht zwangsläufig, ergibt sich dadurch eine konkrete Handlung oder ein konkreter Sachverhalt (siehe Definierende Operatoren).	"stc://attr-1-0/class
+stc://attr-1-0/abstract"		[stc://basic-1-0/EntityA] <is a> [stc://basic-1-0/Scheme]
+operator	stc://ops-1-0/affects	affects	betrifft	Ein Schema A wird dadurch konkretisiert, dass es Personen, Sachverhalten, Kontext, … B betrifft.		[stc://ops-1-0/affects] <is a> [stc://ops-1-0/specified_by]	
+operator	stc://ops-1-0/assign_context	assign context	ordnet zu	Eine Entität A (z.B. ein Ereignis) wird explizit einem Kontext B (z.B. der Vergangenheit) zugeordnet. Bei zeitlichen Zuordnungen bitte den spezifischeren Operator <zeitliche Zuordnung> verwenden		[stc://ops-1-0/affects] <is a> [stc://ops-1-0/specified_by]	[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/Context]
+operator	stc://ops-1-0/assign_temporal	assign temporal	zeitliche Zuordnung	Eine zeitliche Zuordnung eines Ereignisses A zu einem Zeitpunkt oder einem zeitlichen Kontext B. Vorsicht mit Zeitformen: Wenn keine explizite Zuordnung erfolgt, sondern nur die Vergangenheitsform genutzt wird, ist zur Kennzeichnung des zeitlichen Ablaufs das Attribut [stc://basic-1-0/relation:past] zu verwenden.		[stc://ops-1-0/affects] <is a> [stc://ops-1-0/specified_by]	[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/TemporalContext]
+operator	stc://ops-1-0/assign_spacial	assign spacial	örtliche Zuordnung	Eine örtliche Zuordnung eines Ereignisses (Entität A) zu einer Entität B <is a> [SpacialContext].		[stc://ops-1-0/affects] <is a> [stc://ops-1-0/specified_by]	[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/SpacialContext]
+							
+							
+		Definierende Operatoren					
+operator	stc://ops-1-0/and	and	und	Die Vereinigungsmenge der Entitäten A und B definiert eine neue Entität → beide Entitäten sind Mengen oder Gruppen. Nicht zu verwechseln mit dem logischen „Oder“ (Schnittmenge).	stc://attr-1-0/defines		
+operator	stc://ops-1-0/or	or	oder	Die neue Entität kann Entität A oder Entität B sein. Zur Verwendung im Kontext von Restriktionen.	"stc://attr-1-0/abstract
+stc://attr-1-0/defines"		
+operator	stc://ops-1-0/simultaneously	simultaneously	zugleich	Definiert eine Situation welche das gleichzeitige Eintreten zweiter Situationen oder Bedingungen (A/B) beschreibt.	stc://attr-1-0/defines		
+operator	stc://ops-1-0/share_quantitative	share quantitative	Anteil quantitativ	Dieser Operator wird verwendet, um einen quantitativen Anteil einer Menge als neue Entität zu definieren. Der Anteil wird als Entität A angegeben, z.B. [ein Drittel], die Grundgesamtheit als Entität B, z.B. [Polizisten in Los Angeles]	stc://attr-1-0/defines		
+operator	stc://ops-1-0/share_qualitative	share qualitative	Anteil qualitativ	Dieser Operator wird verwendet, um eine Teilmenge anhand eines Merkmals (Entität A) zu definieren.	stc://attr-1-0/defines		
+operator	stc://ops-1-0/share_unspecific	share	Anteil	"Der Operator wird verwendet, um einen nicht näher spezifizierten Anteil einer Gruppe (Entität B) zu definieren, die Entität A ist in diesem Fall immer ""unspezifischer Anteil""."	stc://attr-1-0/defines		[stc://basic-1-0/EntityA] <is a> [stc://basic-1-0/UnspecificQuantity]
+operator	stc://ops-1-0/has_value	has the value	hat den Wert	Definiert aus einer Einheit und einer Quantität einen Wert. Dies kann z.B. aus [Date] und [1980-03-16] den 16. März 1980 als Datum definieren. Hinweis: Der Umgang mit Werten und Daten ist noch nicht hinreichend spezifiziert.	stc://attr-1-0/defines		"[stc://basic-1-0/EntityA] <is a> [https://schema.org/DataType]
+[stc://basic-1-0/EntityB] <is a> [-noch nicht komplett spezifiziert-]"
+operator	stc://ops-1-0/from_to_datetime	from … to	von … bis	Definiert aus zwei Zeitpunkten oder Daten einen Zeitraum.	stc://attr-1-0/defines		"[stc://basic-1-0/EntityA] <is a> [stc://basic-1-0/DateOrTime]
+[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/DateOrTime]
+[stc://basic-1-0/EntityDefined] <is a> [stc://basic-1-0/DateRange]"
+							
+		Verhalten, Kausalität und Logik					
+operator	stc://ops-1-0/does	does	macht	Ein Akteur [Entität A] führt oder führte eine Handlung [Entität B] aus/durch.			"[stc://basic-1-0/EntityA] <is a> [stc://basic-1-0/ActingEntity]
+[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/Action]"
+operator	stc://ops-1-0/does_not	does not	macht nicht	Ein Akteur [Entität A] führt oder führte eine Handlung [Entität B] nicht aus.			"[stc://basic-1-0/EntityA] <is a> [stc://basic-1-0/ActingEntity]
+[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/Action]"
+operator	stc://ops-1-0/uses	uses	verwenden	Ein Akteur [Entität A] verwendet eine Technik [Entität B].			"[stc://basic-1-0/EntityA] <is a> [stc://basic-1-0/ActingEntity]
+[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/Action]"
+operator	stc://ops-1-0/in_schema	in schema	folgt dem Schema	Ein Prozess, eine Tätigkeit oder ein Ablauf folgt einem Schema B.			[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/Scheme]
+operator	stc://ops-1-0/ascribed_to_schema	is ascribed the schema	wird zugeschrieben dem Schema	Einer Gruppe von Personen A wird ein Schema B zugeschrieben.			[stc://basic-1-0/EntityB] <is a> [stc://basic-1-0/Schema]
+operator	stc://ops-1-0/affects	affects	hat Einfluss auf	Ein Sachverhalt A hat Einfluss auf Sachverhalt B.			
+operator	stc://ops-1-0/increases	increases	erhöht	Ein Ereignis oder Verhalten A erhöht den Sachverhalt B			
+operator	stc://ops-1-0/decreases	decreases	verringert	Ein Ereignis oder Verhalten A reduziert den Sachverhalt B			
+operator	stc://ops-1-0/causes	causes	führt zu	Ein Ereignis oder Verhalten A führt zu einem Ereignis B			[stc://basic-1-0/EntityB] <is a> [https://schema.org/Event]
+operator	stc://ops-1-0/not_causes	does not lead to	führt nicht zu	Ein Ereignis A führt NICHT zu einem Ereignis B, es besteht kein Zusammenhang zwischen diesen Ereignissen.			
+operator	stc://ops-1-0/not_required	not needed/required	benötigt nicht	Eine Sache A wird nicht benötigt/ist nicht erforderlich für Sachverhalt B.			
+operator	stc://ops-1-0/insufficient	is insufficient for	reicht alleine nicht für	Ein Ereignis A reicht (alleine) nicht aus, um Ereignis B auszulösen.			
+operator	stc://ops-1-0/requires	require(s)	erfordert/erfordern	Ereignis A kann nur eintreten, wenn Ereignis/Sachverhalt B gegeben ist. Inverser Operator zu <stc://basic-1-0/is_condition_for>			
+operator	stc://ops-1-0/is_condition_for	is condition for	ist Bedingung für	Eine Entität A ist eine Voraussetzung für Entität B (oder wird als solche dargestellt). Inverser Operator zu <stc://basic-1-0/requires>			
+operator	stc://ops-1-0/not_unless	not unless	nicht solange bis	Ein Ereignis A tritt (zeitlich) nicht ein, solange nicht ein anderes Ereignis B eintritt.			
+							
+		Attribute					
+Attribut	stc://attr-1-0/class	entity:class	Klasse von Entitäten	Die Entität beschreibt eine Klasse von Entitäten, z.B. eine soziale Klasse wie [US-Präsidenten]			[stc://basic-1-0/attribute:abstract] <stc://basic-1-0/applicable> [stc://basic-1-0/Entity]
+Attribut	stc://attr-1-0/relation:past	past facts (attribute)	vergangene Handlung/Ereignis (Attribut)	Eine Handlung oder ein Ereignis ist in der Vergangenheit geschehen.			[stc://basic-1-0/attribute:abstract] <stc://basic-1-0/applicable> [stc://basic-1-0/Relation]
+Attribut	stc://attr-1-0/relation:figurative	figurative (attribute)	bildlich zu verstehen (Attribut)	Die Relation ist nicht wörtlich zu verstehen, sondern bildlich gemeint			[stc://basic-1-0/attribute:abstract] <stc://basic-1-0/applicable> [stc://basic-1-0/Relation]
+Attribut	stc://attr-1-0/relation:background	background (attribute)	Hintergrundwissen (Attribut)	Markiert eine Relation, die nicht explizit im Text steht, aber als Hintergrundwissen für das Verständnis des Textes erforderlich ist.			[stc://basic-1-0/attribute:abstract] <stc://basic-1-0/applicable> [stc://basic-1-0/Relation]
+Attribut	stc://attr-1-0/abstract	abstract (attribute)	abstrakt (Attribut)	Die Entität, der Operator oder das Attribut soll nicht zur Kodierung von Semantik verwendet werden, es dient nur als Vorlage für Einträge im Codebuch.	stc://attr-1-0/abstract		[stc://basic-1-0/attribute:abstract] <stc://basic-1-0/applicable> [stc://basic-1-0/Element]
+Attribut	stc://attr-1-0/defines	operator:defines	Operator:definiert	Eine Relation mit diesem Operator definiert immer eine neue Entität.	stc://attr-1-0/abstract		[stc://basic-1-0/attribute:abstract] <stc://basic-1-0/applicable> [stc://basic-1-0/Operator]
+Attribut	stc://attr-1-0/limitation	limitation (attribute)	Einschränkung (Attribut)	Das Attribut stellt eine Einschränkung der Gültigkeit dar.	stc://attr-1-0/abstract		[stc://basic-1-0/attribute:abstract] <stc://basic-1-0/applicable> [stc://basic-1-0/Attribute]
+Attribut	stc://attr-1-0/requires_value	require value (attribute)	Wert erforderlich (Attribut)	Das Attribut kann nur gemeinsam mit einem Wert verwendet werden. Hinweis: Die Verwendung von Einheiten, Daten und absoluten Häufigkeiten in der semantischen Kodierung ist noch nicht hinreichend definiert.	stc://attr-1-0/abstract		[stc://basic-1-0/attribute:abstract] <stc://basic-1-0/applicable> [stc://basic-1-0/Attribute]
+Attribut	stc://attr-1-0/constraint:time	constraint:time	Einschränkung:Zeitraum	Die Entität ist nur für einen bestimmten Zeitraum definiert oder gültig. Der Zeitraum wird als Ausprägung mit Beginn (begin) und Ende (end) des Zeitraums angegeben.	"stc://attr-1-0/limitation
+stc://attr-1-0/requires_value"		[stc://basic-1-0/attribute:abstract] <stc://basic-1-0/applicable> [stc://basic-1-0/Entity]
